@@ -27,7 +27,7 @@
       <!-- 網頁作品 -->
       <div
         v-for="(web, index) in portfolios.webs"
-        v-if="showed === web.type"
+        v-show="showed === web.type"
         :key="'web' + index"
         class="col-12 col-md-4"
       >
@@ -56,7 +56,7 @@
       <!-- 聊天機器人 -->
       <div
         v-for="(chatbot, index) in portfolios.chatbots"
-        v-if="showed === chatbot.type"
+        v-show="showed === chatbot.type"
         :key="'chatbot' + index"
         class="col-12 col-md-4"
       >
@@ -89,7 +89,7 @@
       <!-- 海報 -->
       <div
         v-for="(poster, index) in portfolios.posters"
-        v-if="showed === poster.type"
+        v-show="showed === poster.type"
         :key="'poster' + index"
         class="col-12 col-md-4"
       >
@@ -116,7 +116,7 @@
       <!-- 部落格主題 -->
       <div
         v-for="(blogTheme, index) in portfolios.blogThemes"
-        v-if="showed === blogTheme.type"
+        v-show="showed === blogTheme.type"
         :key="'blogTheme' + index"
         class="col-12 col-md-4"
       >
@@ -143,7 +143,7 @@
       <!-- 影片 -->
       <div
         v-for="(video, index) in portfolios.videos"
-        v-if="showed === video.type"
+        v-show="showed === video.type"
         :key="'video' + index"
         class="col-12 col-md-4"
       >
@@ -864,7 +864,8 @@ export default {
   border-bottom: 3px solid #8bd8f7;
 }
 
-.portfolio-type-btn.active {
+.portfolio-type-btn.active,
+.portfolio-type-btn:active {
   background-color: transparent !important;
   color: #8bd8f7 !important;
   border-bottom: 3px solid #8bd8f7 !important;
@@ -898,4 +899,12 @@ export default {
   background-color: transparent;
   border-bottom: 0px !important;
 }
+
+/* .btn-outline-light:not(:disabled):not(.disabled).active,
+.btn-outline-light:not(:disabled):not(.disabled):active,
+.show>.btn-outline-light.dropdown-toggle {
+  background-color: transparent;
+  color: #8bd8f7;
+  border-bottom: 3px solid #8bd8f7;
+} */
 </style>

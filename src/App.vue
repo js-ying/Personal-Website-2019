@@ -120,6 +120,12 @@ a:hover {
 img[lazy=loading] {
   width: 70px;
   height: 70px;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
 }
 
 </style>

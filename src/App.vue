@@ -45,7 +45,8 @@ export default {
     return {
       profile: {
         name: 'JS Ying',
-        img: 'https://s3.amazonaws.com/jhihsiyingweb/Blog/profile.png',
+        // eslint-disable-next-line global-require
+        img: require('./assets/img/my-photo.jpg'),
       },
       actived: '',
       buttons: [

@@ -825,7 +825,7 @@ export default {
       return this.toogleSortByDate ? '▲ 依時間' : '▼ 依時間';
     },
   },
-  mounted() {
+  created() {
     this.reverse();
   },
   methods: {
@@ -895,7 +895,7 @@ export default {
 
 #sort-by-date-btn:hover,
 #sort-by-date-btn:active {
-  color: white;
+  color: white !important;
   background-color: transparent;
   border-bottom: 0px !important;
 }

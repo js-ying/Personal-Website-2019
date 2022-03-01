@@ -26,7 +26,7 @@ export default {
         },
         {
           title: 'Javascript',
-          contents: ['jQuery', 'Angular', 'Vue.js'],
+          contents: ['jQuery', 'Angular 2', 'Vue 2', 'Vue 3', 'TypeScript'],
         },
         {
           title: 'Server-End',
@@ -57,8 +57,8 @@ export default {
 }
 
 .badge:hover {
-  background-color: #8bd8f7;
-  cursor: pointer;
+  /* background-color: #8bd8f7;
+  cursor: pointer; */
 }
 
 .badge:last-child {

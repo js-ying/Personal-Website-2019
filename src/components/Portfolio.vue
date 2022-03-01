@@ -38,8 +38,19 @@
             <img
               v-lazy="imgDir + web.img"
               :alt="web.name"
-              class="img-fluid" >
+              class="img-fluid"
+            >
           </a>
+          <div class="portfolio-keywords">
+            <span
+              class="badge badge-pill badge-light"
+              :class="{ 'mr-2': $keywordIndex < web.keywords.length - 1 }"
+              v-for="(keyword, $keywordIndex) in web.keywords"
+              :key="$keywordIndex"
+            >
+              {{ keyword }}
+            </span>
+          </div>
           <span class="badge badge-primary portfolio-type">
             {{ web.type }}
           </span>
@@ -200,7 +211,8 @@ export default {
             name: '個人網頁 Ver.1',
             date: '2016',
             description: '第一版個人網頁。',
-            link: 'https://jsy.tw/guand2016',
+            link: 'https://guand2016.jsy.tw/',
+            keywords: ['Angular 1', 'jQuery', 'Bootstrap 3', 'RWD'],
           },
           {
             type: 'Web',
@@ -209,7 +221,8 @@ export default {
             name: '在風城的故事',
             date: '2016',
             description: '獻給陪伴我長大的風之城。',
-            link: 'https://jsy.tw/iHsinchu',
+            link: 'https://hsinchu.jsy.tw/',
+            keywords: ['jQuery', 'Bootstrap 3', 'RWD'],
           },
           {
             type: 'Web',
@@ -218,7 +231,8 @@ export default {
             name: '梁靜茹 Fish-Story',
             date: '2016',
             description: '獻給我最喜愛的歌手。',
-            link: 'https://jsy.tw/Fish-Story',
+            link: 'https://fish.jsy.tw/',
+            keywords: ['PHP', 'jQuery', 'Bootstrap 3', 'RWD'],
           },
           {
             type: 'Web',
@@ -228,6 +242,7 @@ export default {
             date: '2017',
             description: '大學專題的實驗室。',
             link: 'http://nlp.innobic.yzu.edu.tw/',
+            keywords: ['jQuery', 'Bootstrap 3', 'RWD'],
           },
           {
             type: 'Web',
@@ -236,7 +251,8 @@ export default {
             name: '個人網頁 Ver.2',
             date: '2017',
             description: '現在個人網頁的前身。',
-            link: 'https://jsy.tw/guand2017',
+            link: 'https://guand2017.jsy.tw/',
+            keywords: ['Angular 1', 'jQuery', 'Bootstrap 3', 'RWD'],
           },
           {
             type: 'Web',
@@ -246,6 +262,7 @@ export default {
             date: '2018',
             description: '搭載輿情分析的股票決策系統。',
             link: null,
+            keywords: ['PHP', 'Vue 2', 'jQuery', 'Bootstrap 4', 'highcharts'],
           },
           {
             type: 'Web',
@@ -255,6 +272,7 @@ export default {
             date: '2019',
             description: '分析社群媒體上的輿情。',
             link: null,
+            keywords: ['Vue 2', 'Boostrap 4', 'D3.js', 'highcharts', 'RWD'],
           },
           {
             type: 'Web',
@@ -263,7 +281,8 @@ export default {
             name: '饅頭記 Mentoring-Program',
             date: '2019',
             description: 'Mentor 對 Mentee 的經驗傳承。',
-            link: 'https://jsy.tw/mentoring-program',
+            link: 'https://mentoring-program.jsy.tw/',
+            keywords: ['Vue 2', 'Bootstrap 4', 'RWD'],
           },
           {
             type: 'Web',
@@ -272,7 +291,8 @@ export default {
             name: 'Talent Show 2020',
             date: '2020',
             description: '新進員工的分組競賽。',
-            link: 'https://jsy.tw/talent-show-2020',
+            link: 'https://talent-show.jsy.tw/',
+            keywords: ['Vue 2', 'Bootstrap 4', 'RWD'],
           },
           {
             type: 'Web',
@@ -281,7 +301,18 @@ export default {
             name: '台鐵時刻查詢',
             date: '2020',
             description: '查詢火車時刻，簡單又快速。',
-            link: 'https://jsy.tw/trainTime',
+            link: 'https://traintime.jsy.tw/',
+            keywords: ['Vue 2', 'Bootstrap-Vue', 'RWD'],
+          },
+          {
+            type: 'Web',
+            ifcase: '自行練習',
+            img: 'hsTrainTime.png',
+            name: '高鐵時刻查詢',
+            date: '2021',
+            description: '查詢高鐵時刻，簡單又快速。',
+            link: 'https://hs-traintime.jsy.tw/',
+            keywords: ['Vue 3', 'Bootstrap 5', 'RWD'],
           },
         ],
         chatbots: [
@@ -901,6 +932,21 @@ export default {
   left: 30px;
 }
 
+.portfolio-keywords {
+  margin-top: 5px;
+  overflow: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  font-size: 90%;
+}
+
+.portfolio-keywords::-webkit-scrollbar {
+  background: transparent; /* Chrome/Safari/Webkit */
+  width: 0px;
+  height: 0px;
+}
+
 #sort-by-date-btn {
   width: 100px;
   font-size: 1rem;
@@ -917,12 +963,4 @@ export default {
   background-color: transparent;
   border-bottom: 0px !important;
 }
-
-/* .btn-outline-light:not(:disabled):not(.disabled).active,
-.btn-outline-light:not(:disabled):not(.disabled):active,
-.show>.btn-outline-light.dropdown-toggle {
-  background-color: transparent;
-  color: #8bd8f7;
-  border-bottom: 3px solid #8bd8f7;
-} */
 </style>

@@ -10,6 +10,9 @@
         target="_blank">
         <button class="btn btn-outline-light mt-4"> {{ blog.btn }} </button>
       </a>
+      <p class="warning">
+        （2022/02 月底 server 掛了，搶修中）
+      </p>
     </div>
   </div>
 </template>
@@ -77,6 +80,12 @@ export default {
 #blog .line-container {
   color: #dbddde !important;
   font-size: 1rem !important;
+}
+
+#blog .warning {
+  color:wheat;
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
 </style>

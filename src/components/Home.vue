@@ -30,7 +30,7 @@ export default {
         },
         {
           name: 'Github',
-          link: 'https://github.com/jhihsiying',
+          link: 'https://github.com/js-ying',
         },
       ],
     };

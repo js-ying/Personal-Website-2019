@@ -10,9 +10,6 @@
         target="_blank">
         <button class="btn btn-outline-light mt-4"> {{ blog.btn }} </button>
       </a>
-      <p class="warning">
-        （2022/02 月底 server 掛了，搶修中）
-      </p>
     </div>
   </div>
 </template>
@@ -53,8 +50,15 @@ export default {
             color: '#4f7cac',
             type: 'circle',
           },
+          {
+            tag: '2022',
+            content: '網域變更 | blog.jsy.tw<br />重新架了 server 順便將所有網址從子目錄變為子網域。',
+            htmlMode: true,
+            color: '#8bd8f7',
+            type: 'circle',
+          },
         ],
-        link: 'https://jsy.tw/blog',
+        link: 'https://blog.jsy.tw/',
         btn: '點此進入',
       },
     };

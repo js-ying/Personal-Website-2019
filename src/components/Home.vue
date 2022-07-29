@@ -8,11 +8,11 @@
       <a
         :href='contact.link'
         target='_blank'
-        class='mr-3'
+        :class="{ 'mr-3': index != contacts.length - 1 }"
         v-for='(contact, index) in contacts'
         :key='index'
       >
-        <span class='badge badge-pill badge-secondary mb-4'> {{ contact.name }} </span>
+        <span class='badge badge-pill badge-secondary'> {{ contact.name }} </span>
       </a>
     </p>
   </div>

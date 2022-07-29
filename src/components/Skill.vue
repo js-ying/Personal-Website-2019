@@ -21,12 +21,12 @@ export default {
     return {
       skills: [
         {
-          title: 'CSS',
-          contents: ['Bootstrap', 'Sass', 'Responsive Web', 'Grid Layout'],
+          title: 'Javascript',
+          contents: ['Angular 2', 'Vue 2', 'Vue 3', 'TypeScript', 'jQuery'],
         },
         {
-          title: 'Javascript',
-          contents: ['jQuery', 'Angular 2', 'Vue 2', 'Vue 3', 'TypeScript'],
+          title: 'CSS',
+          contents: ['Bootstrap', 'Sass', 'Responsive Web'],
         },
         {
           title: 'Server-End',

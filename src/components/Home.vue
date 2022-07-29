@@ -1,18 +1,22 @@
 <template>
-  <div class='home text-center pt-3'>
-    <p>2019 畢業<br />
-    國立中央大學 | 資訊管理碩士</p>
+  <div class="home text-center pt-3">
+    <p>
+      2019 畢業<br />
+      國立中央大學 | 資訊管理碩士
+    </p>
     <p>2019 工作至今<br />IBM Taiwan | Application Consultant</p>
-    <p>#柴犬 #梁靜茹 #前端</p>
+    <p>喜歡柴犬、梁靜茹和前端開發。</p>
     <p>
       <a
-        :href='contact.link'
-        target='_blank'
+        :href="contact.link"
+        target="_blank"
         :class="{ 'mr-3': index != contacts.length - 1 }"
-        v-for='(contact, index) in contacts'
-        :key='index'
+        v-for="(contact, index) in contacts"
+        :key="index"
       >
-        <span class='badge badge-pill badge-secondary'> {{ contact.name }} </span>
+        <span class="badge badge-pill badge-secondary">
+          {{ contact.name }}
+        </span>
       </a>
     </p>
   </div>

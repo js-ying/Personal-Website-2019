@@ -5,6 +5,7 @@ import Home from '@/components/Home';
 import Skill from '@/components/Skill';
 import Blog from '@/components/Blog';
 import Portfolio from '@/components/Portfolio';
+import PortfolioDetail from '@/components/PortfolioDetail';
 import NotFoundComponent from '@/components/404';
 
 Vue.use(Router);
@@ -30,6 +31,11 @@ export default new Router({
       path: '/portfolio',
       name: 'Portfolio',
       component: Portfolio,
+    },
+    {
+      path: '/portfolio-detail',
+      name: 'PortfolioDetail',
+      component: PortfolioDetail,
     },
     {
       path: '*',

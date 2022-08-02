@@ -1,24 +1,9 @@
-# guand2019vue
+## 個人網站 JS Ying
 
-## Project setup
-```
-npm install
-```
+歷經第 2013、2016、2017 三代的個人網站，現在這個在碩一時建置的 2019 個人網頁是我非常滿意的一個作品。
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+使用 Vue 建構簡單的 SPA，單純地套用 bootstrap 來刻 layout；UX 任我調整之外，還具備十足的可擴充性，讓我一用就是好多年。
 
-### Compiles and minifies for production
-```
-npm run build
-```
+裡面包含了我的簡單經歷、技能、部落格介紹以及作品集，有興趣歡迎逛逛。
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Demo: https://jsy.tw

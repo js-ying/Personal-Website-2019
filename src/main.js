@@ -12,7 +12,7 @@ import router from './router';
 Vue.use(LightTimeline);
 Vue.use(VueLazyload, {
   preLoad: 1.3,
-  loading: './static/loading2.png',
+  loading: './loading2.png',
   attempt: 1,
 });
 
@@ -23,6 +23,8 @@ Vue.config.devtools = true;
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>',
 });

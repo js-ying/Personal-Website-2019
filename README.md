@@ -1,7 +1,24 @@
-# JS Ying
-個人網站 2019 年版至今。
+# guand2019vue
 
-歷經第 0、1 和 2 代的個人網站，2019 年版的風格對我來說耐看且具擴充性，算是很滿意的版本。<br />
-內有更完整的個人介紹與作品集，歡迎進來看看！
+## Project setup
+```
+npm install
+```
 
-Demo: [https://jsy.tw](https://jsy.tw)
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

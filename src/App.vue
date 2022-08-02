@@ -1,7 +1,9 @@
 <template>
   <div class="container" id="app">
     <Navbar />
-    <router-view />
+    <keep-alive :include="'Portfolio'">
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 
@@ -67,5 +69,11 @@ img[lazy="loading"] {
   animation-fill-mode: both;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
+}
+
+.block {
+  border: 1px solid white;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 </style>

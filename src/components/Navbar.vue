@@ -1,5 +1,5 @@
 <template>
-  <div class="row mt-5 mb-3">
+  <div class="row mt-5 mb-3" v-show="notProtfolioDetail">
     <div class="col-12 col-md-2 text-center text-md-left mb-3">
       <img
         :src="profile.img"
@@ -68,6 +68,11 @@ export default {
   methods: {
     toggle(button) {
       this.actived = button;
+    },
+  },
+  computed: {
+    notProtfolioDetail() {
+      return this.$route.name !== 'PortfolioDetail';
     },
   },
 };

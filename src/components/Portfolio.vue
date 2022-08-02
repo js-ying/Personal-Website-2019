@@ -1,9 +1,7 @@
 <template>
-  <div
-    id="portfolio"
-    class="text-center">
-    <div>
-      <!-- 作品集類型按鈕 -->
+  <div id="portfolio" class="text-center">
+    <!-- 作品集類型按鈕 -->
+    <div id="portfolio-type-btn-area">
       <button
         v-for="(button, index) in buttons"
         :key="index"
@@ -14,7 +12,8 @@
         {{ button.name }}
       </button>
     </div>
-    <div class="d-flex align-items-end flex-column mb-1">
+    <!-- 依時間排序按鈕 -->
+    <div class="d-flex align-items-end flex-column mb-1" id="sortby-btn">
       <button
         id="sort-by-date-btn"
         class="btn btn-outline-light portfolio-type-btn"
@@ -23,7 +22,8 @@
         {{ sortByDateBtnDesc }}
       </button>
     </div>
-    <div class="row">
+    <!-- 作品清單 -->
+    <div class="row" id="portfolio-list">
       <!-- 網頁作品 -->
       <div
         v-for="(web, index) in portfolios.webs"
@@ -31,16 +31,18 @@
         :key="'web' + index"
         class="col-12 col-md-4"
       >
-        <div class="block p-2 mb-4">
-          <a
-            :href="web.link"
-            target="_blank">
-            <img
-              v-lazy="imgDir + web.img"
-              :alt="web.name"
-              class="img-fluid"
-            >
+        <div class="block">
+          <a :href="web.link" target="_blank">
+            <img v-lazy="imgDir + web.img" :alt="web.name" class="img-fluid" />
           </a>
+          <!-- <router-link
+            :to="{
+              name: 'PortfolioDetail',
+              params: { data: web, imgSrc: imgDir + web.img },
+            }"
+          >
+            <img v-lazy="imgDir + web.img" :alt="web.name" class="img-fluid" />
+          </router-link> -->
           <div class="portfolio-keywords">
             <span
               class="badge badge-pill badge-light"
@@ -58,8 +60,8 @@
             {{ web.ifcase }}
           </span>
           <div class="pt-2 pr-2 pl-2">
-            {{ web.name }} <br >
-            <small> {{ web.description }} </small><br >
+            {{ web.name }} <br />
+            <small> {{ web.description }} </small><br />
             <small> {{ web.date }} </small>
           </div>
         </div>
@@ -72,14 +74,12 @@
         class="col-12 col-md-4"
       >
         <div class="block p-2 mb-4">
-          <a
-            :href="chatbot.link"
-            target="_blank">
+          <a :href="chatbot.link" target="_blank">
             <img
               v-lazy="imgDir + chatbot.img"
               :alt="chatbot.name"
               class="img-fluid"
-            >
+            />
           </a>
           <span class="badge badge-primary portfolio-type">
             {{ chatbot.type }}
@@ -88,9 +88,9 @@
             {{ chatbot.ifcase }}
           </span>
           <div class="pt-2 pr-2 pl-2">
-            {{ chatbot.name }} <br >
+            {{ chatbot.name }} <br />
             <small>{{ chatbot.description }}</small
-            ><br >
+            ><br />
             <small>
               {{ chatbot.date }}
             </small>
@@ -109,7 +109,7 @@
             v-lazy="imgDir + poster.img"
             :alt="poster.name"
             class="img-fluid"
-          >
+          />
           <span class="badge badge-danger portfolio-type">
             {{ poster.type }}
           </span>
@@ -117,7 +117,7 @@
             {{ poster.ifcase }}
           </span>
           <div class="pt-2 pr-2 pl-2">
-            {{ poster.name }} <br >
+            {{ poster.name }} <br />
             <small>
               {{ poster.date }}
             </small>
@@ -136,7 +136,7 @@
             v-lazy="imgDir + blogTheme.img"
             :alt="blogTheme.name"
             class="img-fluid"
-          >
+          />
           <span class="badge badge-danger portfolio-type">
             {{ blogTheme.type }}
           </span>
@@ -144,7 +144,7 @@
             {{ blogTheme.ifcase }}
           </span>
           <div class="pt-2 pr-2 pl-2">
-            {{ blogTheme.name }} <br >
+            {{ blogTheme.name }} <br />
             <small>
               {{ blogTheme.date }}
             </small>
@@ -159,14 +159,12 @@
         class="col-12 col-md-4"
       >
         <div class="block p-2 mb-4">
-          <a
-            :href="video.link"
-            target="_blank">
+          <a :href="video.link" target="_blank">
             <img
               v-lazy="imgDir + video.img"
               :alt="video.name"
               class="img-fluid"
-            >
+            />
           </a>
           <span class="badge badge-danger portfolio-type">
             {{ video.type }}
@@ -175,9 +173,9 @@
             {{ video.ifcase }}
           </span>
           <div class="pt-2 pr-2 pl-2">
-            {{ video.name }} <br >
+            {{ video.name }} <br />
             <small>{{ video.description }}</small
-            ><br >
+            ><br />
             <small>
               {{ video.date }}
             </small>
@@ -213,6 +211,7 @@ export default {
             description: '第一版個人網頁。',
             link: 'https://guand2016.jsy.tw/',
             keywords: ['Angular 1', 'jQuery', 'Bootstrap 3', 'RWD'],
+            longDescription: '超快ㄉ',
           },
           {
             type: 'Web',
@@ -894,10 +893,6 @@ export default {
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
-.block {
-  border: 1px solid white;
-}
-
 .portfolio-type-btn {
   border-radius: 0%;
   border-top: 0px;

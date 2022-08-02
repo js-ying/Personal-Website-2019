@@ -5,7 +5,7 @@
       國立中央大學 | 資訊管理碩士
     </p>
     <p>2019 工作至今<br />IBM Taiwan | Application Consultant</p>
-    <p>喜歡柴犬、梁靜茹和前端開發。</p>
+    <p>喜歡柴犬和梁靜茹，擅長前端開發。<br />樂於學習各種前端新知，僅因前端很美。</p>
     <p>
       <a
         :href="contact.link"

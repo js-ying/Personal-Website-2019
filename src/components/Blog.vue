@@ -1,15 +1,21 @@
 <template>
-  <div
-    id="blog"
-    class="text-center">
+  <div id="blog" class="text-center">
     <div class="mt-3 mb-4">
-      <h4 class="mb-4"> {{ blog.title }} </h4>
-      <light-timeline :items="blog.timelines"/>
-      <a
-        :href="blog.link"
-        target="_blank">
-        <button class="btn btn-outline-light mt-4"> {{ blog.btn }} </button>
+      <h4 class=""> {{ blog.title }} </h4>
+      <a :href="blog.link" target="_blank">
+        <button class="btn btn-outline-light mt-4 mb-4">
+          {{ blog.btn }}
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-box-arrow-up-right mb-1" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+            <path fill-rule="evenodd"
+              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+          </svg>
+        </button>
       </a>
+      <light-timeline :items="blog.timelines" />
     </div>
   </div>
 </template>
@@ -57,7 +63,7 @@ export default {
             color: '#8bd8f7',
             type: 'circle',
           },
-        ],
+        ].reverse(),
         link: 'https://blog.jsy.tw/',
         btn: '點此進入',
       },
@@ -67,29 +73,30 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-#blog .line-container {
+<style scoped>
+#blog:deep .line-container {
   width: 50%;
   margin: 0 auto !important;
 }
+
 @media (max-width: 768px) {
-  #blog .line-container {
+  #blog:deep .line-container {
     width: 100%;
   }
 }
 
-#blog .line-container .item-tag {
+#blog:deep .line-container .item-tag {
   color: #dbddde !important;
 }
-#blog .line-container {
+
+#blog:deep .line-container {
   color: #dbddde !important;
   font-size: 1rem !important;
 }
 
-#blog .warning {
-  color:wheat;
+#blog:deep .warning {
+  color: wheat;
   font-size: 1rem;
   margin-top: 0.5rem;
 }
-
 </style>

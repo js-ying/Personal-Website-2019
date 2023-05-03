@@ -28,7 +28,7 @@ body:before {
   width: 100%;
   height: 100%;
   z-index: -10;
-  background: url("./assets/img/wallpaper2-3.jpg") no-repeat center center;
+  background: url("./assets/img/wallpaper2.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

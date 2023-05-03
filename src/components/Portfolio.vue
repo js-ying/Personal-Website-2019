@@ -313,6 +313,16 @@ export default {
             link: 'https://hs-traintime.jsy.tw/',
             keywords: ['Vue 3', 'Bootstrap 5', 'RWD'],
           },
+          {
+            type: 'Web',
+            ifcase: '公司活動（已去識別）',
+            img: 'university-2023-cover.png',
+            name: 'Consulting University 2023',
+            date: '2022',
+            description: '顧問公司的員工培訓。',
+            link: 'https://university.jsy.tw/',
+            keywords: ['React 18', 'Bootstrap 5', 'RWD'],
+          },
         ],
         chatbots: [
           {

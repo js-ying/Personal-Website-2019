@@ -4,6 +4,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LightTimeline from 'vue-light-timeline';
 import VueLazyload from 'vue-lazyload';
+import VueEasyLightbox from 'vue-easy-lightbox'
 
 import Vue from 'vue';
 import App from './App';
@@ -15,6 +16,7 @@ Vue.use(VueLazyload, {
   loading: './loading2.png',
   attempt: 1,
 });
+Vue.use(VueEasyLightbox);
 
 Vue.config.productionTip = false;
 Vue.config.devtools = true;

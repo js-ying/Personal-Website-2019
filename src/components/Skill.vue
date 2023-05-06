@@ -66,7 +66,6 @@ export default {
 
 .desc {
   font-size: 1rem;
-  /* font-style: italic; */
 }
 
 .badge:last-child {

@@ -1,20 +1,17 @@
 <template>
   <div id="blog" class="text-center">
     <div class="mt-3 mb-4">
-      <h4 class=""> {{ blog.title }} </h4>
+      <div class="font-weight-bold">{{ blog.title }}</div>
       <a :href="blog.link" target="_blank">
-        <button class="btn btn-outline-light mt-4 mb-4">
-          {{ blog.btn }}
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            class="bi bi-box-arrow-up-right mb-1" viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
-            <path fill-rule="evenodd"
-              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
-          </svg>
-        </button>
+        <small>
+          {{ blog.link }}
+        </small>
       </a>
+      <div class="d-flex justify-content-center mt-3">
+        <div class="col-12 col-md-6 block">
+          <img width="100%" id="blog-img" v-lazy="blog.imgUrl" @click="openImg()" />
+        </div>
+      </div>
       <light-timeline :items="blog.timelines" />
     </div>
   </div>
@@ -65,15 +62,31 @@ export default {
           },
         ].reverse(),
         link: 'https://blog.jsy.tw/',
+        imgUrl: 'https://jhihsiyingweb.s3.amazonaws.com/Blog/2023.03.12_wordpress-site-editor-dark-theme/2023-dark-theme.png',
         btn: '點此進入',
       },
+      lightbox: {
+        visible: false,
+        index: 0,
+        imgs: ['https://jhihsiyingweb.s3.amazonaws.com/Blog/2023.03.12_wordpress-site-editor-dark-theme/2023-dark-theme.png'],
+      },
     };
+  },
+  methods: {
+    openImg() {
+      this.lightbox.visible = true;
+      this.$bus.$emit('openImg', this.lightbox);
+    },
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#blog-img {
+  cursor: pointer;
+}
+
 #blog:deep .line-container {
   width: 50%;
   margin: 0 auto !important;

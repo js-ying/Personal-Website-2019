@@ -134,9 +134,6 @@
         </div>
       </div>
     </div>
-
-    <vue-easy-lightbox :visible="lightbox.visible" :imgs="lightbox.imgs" :index="lightbox.index"
-      @hide="hideImg"></vue-easy-lightbox>
   </div>
 </template>
 
@@ -173,9 +170,6 @@ export default {
       return this.toogleSortByDate ? '▲ 依時間' : '▼ 依時間';
     },
   },
-  created() {
-    this.reverse();
-  },
   methods: {
     toggle(button) {
       this.actived = button;
@@ -191,9 +185,8 @@ export default {
       this.lightbox.imgs = type === 'poster' ? this.lightbox.posterImgs : this.lightbox.blogThemeImgs;
       this.lightbox.index = index;
       this.lightbox.visible = true;
-    },
-    hideImg() {
-      this.lightbox.visible = false;
+
+      this.$bus.$emit('openImg', this.lightbox);
     },
     initLightboxImgs() {
       this.lightbox.posterImgs = this.portfolios.posters.map((poster) => ({ title: `${poster.name} (${poster.date})`, src: poster.link }));
@@ -201,7 +194,8 @@ export default {
       this.lightbox.blogThemeImgs = this.portfolios.blogThemes.map((blogTheme) => ({ title: `${blogTheme.name} (${blogTheme.date})`, src: blogTheme.link }));
     },
   },
-  mounted() {
+  created() {
+    this.reverse();
     this.initLightboxImgs();
   },
 };
@@ -281,18 +275,4 @@ export default {
   cursor: pointer;
 }
 
-::v-deep .vel-modal {
-  background: rgba(0,0,0,.7) !important;
-}
-
-::v-deep .vel-img-wrapper {
-  transition: none !important;
-}
-
-::v-deep .vel-img-title {
-  color: white !important;
-  opacity: 1 !important;
-  font-size: 18px !important;
-  padding: 5px 10px;
-}
 </style>

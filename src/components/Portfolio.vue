@@ -196,18 +196,14 @@ export default {
       this.lightbox.visible = false;
     },
     initLightboxImgs() {
-      this.lightbox.posterImgs = this.portfolios.posters.map(poster => {
-        return { title: `${poster.name} (${poster.date})`, src: poster.link };
-      });
+      this.lightbox.posterImgs = this.portfolios.posters.map((poster) => ({ title: `${poster.name} (${poster.date})`, src: poster.link }));
 
-      this.lightbox.blogThemeImgs = this.portfolios.blogThemes.map(blogTheme => {
-        return { title: `${blogTheme.name} (${blogTheme.date})`, src: blogTheme.link };
-      });
-    }
+      this.lightbox.blogThemeImgs = this.portfolios.blogThemes.map((blogTheme) => ({ title: `${blogTheme.name} (${blogTheme.date})`, src: blogTheme.link }));
+    },
   },
   mounted() {
     this.initLightboxImgs();
-  }
+  },
 };
 </script>
 

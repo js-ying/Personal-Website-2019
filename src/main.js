@@ -4,10 +4,10 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LightTimeline from 'vue-light-timeline';
 import VueLazyload from 'vue-lazyload';
-import VueEasyLightbox from 'vue-easy-lightbox'
+import VueEasyLightbox from 'vue-easy-lightbox';
 
 import Vue from 'vue';
-import App from './App';
+import App from './App.vue';
 import router from './router';
 
 Vue.use(LightTimeline);
@@ -26,7 +26,7 @@ new Vue({
   el: '#app',
   router,
   components: {
-    App
+    App,
   },
   template: '<App/>',
 });

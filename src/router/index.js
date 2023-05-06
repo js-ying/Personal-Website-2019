@@ -1,13 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Home from '@/components/Home';
-import Skill from '@/components/Skill';
-// import Skill2 from '@/components/Skill2';
-import Blog from '@/components/Blog';
-import Portfolio from '@/components/Portfolio';
-import PortfolioDetail from '@/components/PortfolioDetail';
-import NotFoundComponent from '@/components/404';
+import Home from '@/components/Home.vue';
+import Skill from '@/components/Skill.vue';
+import Blog from '@/components/Blog.vue';
+import Portfolio from '@/components/Portfolio.vue';
+import PortfolioDetail from '@/components/PortfolioDetail.vue';
+import NotFoundComponent from '@/components/404.vue';
 
 Vue.use(Router);
 
@@ -23,11 +22,6 @@ export default new Router({
       name: 'Skill',
       component: Skill,
     },
-    // {
-    //   path: '/skill2',
-    //   name: 'Skill2',
-    //   component: Skill2,
-    // },
     {
       path: '/blog-intro',
       name: 'Blog',

@@ -285,6 +285,10 @@ export default {
   cursor: pointer;
 }
 
+::v-deep .vel-modal {
+  background: rgba(0,0,0,.7) !important;
+}
+
 ::v-deep .vel-img-wrapper {
   transition: none !important;
 }
@@ -292,8 +296,7 @@ export default {
 ::v-deep .vel-img-title {
   color: white !important;
   opacity: 1 !important;
-  font-size: 16px !important;
-  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 18px !important;
   padding: 5px 10px;
 }
 </style>

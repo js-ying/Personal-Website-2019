@@ -13,8 +13,8 @@ import './style.css';
 
 Vue.use(LightTimeline);
 Vue.use(VueLazyload, {
-  preLoad: 1.3,
-  loading: './loading2.png',
+  preLoad: 2,
+  loading: './loading.svg',
   attempt: 1,
 });
 Vue.use(VueEasyLightbox);

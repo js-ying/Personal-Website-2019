@@ -12,7 +12,11 @@
           <img width="100%" id="blog-img" v-lazy="blog.imgUrl" @click="openImg()" />
         </div>
       </div>
-      <light-timeline :items="blog.timelines" />
+      <div class="timeline mb-4" v-for="(line, index) in blog.timelines" :key="index">
+        <div><span class='badge badge-pill badge-light mb-2'>{{ line.tag }}</span></div>
+        <div v-html="line.content"></div>
+      </div>
+      <!-- <light-timeline :items="blog.timelines" /> -->
     </div>
   </div>
 </template>
@@ -85,6 +89,10 @@ export default {
 <style scoped>
 #blog-img {
   cursor: pointer;
+}
+
+.timeline {
+  font-size: 0.875em;
 }
 
 #blog:deep .line-container {

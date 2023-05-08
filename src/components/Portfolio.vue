@@ -180,6 +180,8 @@ export default {
       Object.keys(this.portfolios).forEach((key) => {
         this.portfolios[key] = this.portfolios[key].reverse();
       });
+      this.lightbox.posterImgs = this.lightbox.posterImgs.reverse();
+      this.lightbox.blogThemeImgs = this.lightbox.blogThemeImgs.reverse();
     },
     openImg(index, type) {
       this.lightbox.imgs = type === 'poster' ? this.lightbox.posterImgs : this.lightbox.blogThemeImgs;

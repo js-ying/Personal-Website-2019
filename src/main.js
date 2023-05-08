@@ -13,7 +13,7 @@ import './style.css';
 
 Vue.use(LightTimeline);
 Vue.use(VueLazyload, {
-  preLoad: 2,
+  preLoad: 1.3,
   loading: './loading.svg',
   attempt: 1,
 });

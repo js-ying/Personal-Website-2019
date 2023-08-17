@@ -30,7 +30,7 @@ export default {
       contacts: [
         {
           name: 'E-mail',
-          link: 'mailto:jhihsiying@gmail.com',
+          link: 'mailto:jsying1994@gmail.com',
         },
         {
           name: 'Github',

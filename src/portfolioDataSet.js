@@ -94,7 +94,7 @@ const portfolioDataSet = {
     {
       type: 'Web',
       ifcase: '自行練習',
-      img: 'trainTime.jpg',
+      img: 'traintime.png',
       name: '台鐵時刻查詢',
       date: '2020',
       description: '查詢火車時刻，簡單又快速。',
@@ -104,7 +104,7 @@ const portfolioDataSet = {
     {
       type: 'Web',
       ifcase: '自行練習',
-      img: 'hsTrainTime.png',
+      img: 'hs-traintime.png',
       name: '高鐵時刻查詢',
       date: '2021',
       description: '查詢高鐵時刻，簡單又快速。',

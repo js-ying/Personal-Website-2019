@@ -20,7 +20,7 @@
       </router-link>
       <div class="row">
         <div
-          class="col-4 col-md-2 mb-3"
+          class="col-4 col-md-2 mb-3 text-nowrap"
           v-for="(button, index) in buttons"
           :key="index"
           @click="toggle(button.name)"

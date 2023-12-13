@@ -138,7 +138,7 @@
 </template>
 
 <script>
-import portfolioDataSet from '../portfolioDataSet';
+import portfolioDataSet from '../../public/dataSet/portfolioDataSet';
 
 export default {
   name: 'Portfolio',

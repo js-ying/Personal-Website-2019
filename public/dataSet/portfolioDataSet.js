@@ -17,7 +17,7 @@ const portfolioDataSet = {
       img: 'hsinchu.jpg',
       name: '在風城的故事',
       date: '2016',
-      description: '獻給陪伴我長大的風之城。',
+      description: '獻給陪伴我長大的城市。',
       link: 'https://hsinchu.jsy.tw/',
       keywords: ['jQuery', 'Bootstrap 3', 'RWD'],
     },
@@ -37,7 +37,7 @@ const portfolioDataSet = {
       img: 'nlplab.jpg',
       name: '元智大學自然語言處理實驗室',
       date: '2017',
-      description: '大學專題的實驗室。',
+      description: '大學實驗室的官網。',
       link: 'http://nlp.innobic.yzu.edu.tw/',
       keywords: ['jQuery', 'Bootstrap 3', 'RWD'],
     },
@@ -67,9 +67,9 @@ const portfolioDataSet = {
       img: 'yzusocial.png',
       name: '新元智大學社群媒體分析平台',
       date: '2019',
-      description: '分析社群媒體上的輿情。',
+      description: '社群媒體輿情分析 Dashboard。',
       link: null,
-      keywords: ['Vue 2', 'Boostrap 4', 'D3.js', 'highcharts', 'RWD'],
+      keywords: ['Vue 2', 'Bootstrap 4', 'D3.js', 'highcharts', 'RWD'],
     },
     {
       type: 'Web',
@@ -77,7 +77,7 @@ const portfolioDataSet = {
       img: 'mentoring-program.png',
       name: '饅頭記 Mentoring-Program',
       date: '2019',
-      description: 'Mentor 對 Mentee 的經驗傳承。',
+      description: 'Mentor 經驗傳承活動官網。',
       link: 'https://mentoring-program.jsy.tw/',
       keywords: ['Vue 2', 'Bootstrap 4', 'RWD'],
     },
@@ -87,7 +87,7 @@ const portfolioDataSet = {
       img: 'talent-show-2020.png',
       name: 'Talent Show 2020',
       date: '2020',
-      description: '新進員工的分組競賽。',
+      description: '新進員工的分組競賽活動官網。',
       link: 'https://talent-show.jsy.tw/',
       keywords: ['Vue 2', 'Bootstrap 4', 'RWD'],
     },
@@ -96,10 +96,10 @@ const portfolioDataSet = {
       ifcase: '自行練習',
       img: 'traintime.png',
       name: '台鐵時刻查詢',
-      date: '2020',
+      date: '2020, 2023',
       description: '查詢火車時刻，簡單又快速。',
       link: 'https://traintime.jsy.tw/',
-      keywords: ['Vue 2', 'Bootstrap-Vue', 'RWD'],
+      keywords: ['Vue 2', 'Express.js', 'Bootstrap-Vue', 'RWD'],
     },
     {
       type: 'Web',
@@ -117,7 +117,7 @@ const portfolioDataSet = {
       img: 'university-2023-cover.png',
       name: 'Consulting University 2023',
       date: '2022',
-      description: '顧問公司的員工培訓。',
+      description: '顧問公司的員工培訓活動官網。',
       link: 'https://university.jsy.tw/',
       keywords: ['React 18', 'Bootstrap 5', 'RWD'],
     },
@@ -142,8 +142,7 @@ const portfolioDataSet = {
       name: '千年傳統全新感受',
       date: '2008',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog5.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog5.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -153,8 +152,7 @@ const portfolioDataSet = {
       name: '敗犬女王',
       date: '2009',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog6.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog6.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -164,8 +162,7 @@ const portfolioDataSet = {
       name: '我喜愛的歌手們(Yahoo!Blog)',
       date: '2009',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog7.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog7.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -175,8 +172,7 @@ const portfolioDataSet = {
       name: '那年夏天',
       date: '2009',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog8.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog8.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -186,8 +182,7 @@ const portfolioDataSet = {
       name: '分離',
       date: '2009',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog9.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog9.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -197,8 +192,7 @@ const portfolioDataSet = {
       name: '那一年的幸福時光',
       date: '2009',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog10.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog10.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -208,8 +202,7 @@ const portfolioDataSet = {
       name: '藍天',
       date: '2009',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog11.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog11.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -219,8 +212,7 @@ const portfolioDataSet = {
       name: '我的聖誕我生日',
       date: '2009',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog12.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog12.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -230,8 +222,7 @@ const portfolioDataSet = {
       name: '海派甜心',
       date: '2010',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog13.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog13.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -241,8 +232,7 @@ const portfolioDataSet = {
       name: '痞子英雄(Yahoo!Blog)',
       date: '2010',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog14.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog14.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -252,8 +242,7 @@ const portfolioDataSet = {
       name: '蔚藍盛夏',
       date: '2010',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog15.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog15.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -263,8 +252,7 @@ const portfolioDataSet = {
       name: '近在咫尺',
       date: '2010',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog16.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog16.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -274,8 +262,7 @@ const portfolioDataSet = {
       name: '澶恬',
       date: '2010',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog17.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog17.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -285,8 +272,7 @@ const portfolioDataSet = {
       name: '魔導少年(Yahoo!Blog)',
       date: '2010',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog18.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/y_blog18.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -296,8 +282,7 @@ const portfolioDataSet = {
       name: '零-重新開始',
       date: '2011',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog0.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog0.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -307,8 +292,7 @@ const portfolioDataSet = {
       name: '痞子英雄(痞客邦)',
       date: '2011',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog1.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog1.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -318,8 +302,7 @@ const portfolioDataSet = {
       name: '魔導少年(痞客邦)',
       date: '2011',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog2.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog2.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -329,8 +312,7 @@ const portfolioDataSet = {
       name: '醉後決定愛上你',
       date: '2011',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog3.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog3.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -340,8 +322,7 @@ const portfolioDataSet = {
       name: '美樂加油',
       date: '2011',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog4.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog4.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -351,8 +332,7 @@ const portfolioDataSet = {
       name: '小資女孩向前衝',
       date: '2011',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog5.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog5.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -362,8 +342,7 @@ const portfolioDataSet = {
       name: '2012是芥茉日',
       date: '2011',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog6.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog6.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -373,8 +352,7 @@ const portfolioDataSet = {
       name: '我喜愛的歌手們(痞客邦)',
       date: '2012',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog7.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog7.jpg',
     },
     {
       type: 'Blog-Theme',
@@ -384,8 +362,7 @@ const portfolioDataSet = {
       name: 'Best Friend',
       date: '2012',
       description: '',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog8.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/p_blog8.jpg',
     },
   ],
   posters: [
@@ -397,8 +374,7 @@ const portfolioDataSet = {
       name: '樂高機器人營',
       for: '元智大學電機系',
       date: '2013',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/case1.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/case1.jpg',
     },
     // {
     //   type: 'Poster',
@@ -426,8 +402,7 @@ const portfolioDataSet = {
       name: '藍鵲資訊志工',
       for: '龍華科大社團',
       date: '2014',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/case2.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/case2.jpg',
     },
     {
       type: 'Poster',
@@ -436,8 +411,7 @@ const portfolioDataSet = {
       ifcase: '學校社團',
       name: '全元逃走中',
       date: '2014',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/pi3.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/pi3.jpg',
     },
     {
       type: 'Poster',
@@ -446,8 +420,7 @@ const portfolioDataSet = {
       ifcase: '學校社團',
       name: '健康性教育宣導',
       date: '2014',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/pi4.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/pi4.jpg',
     },
     {
       type: 'Poster',
@@ -456,8 +429,7 @@ const portfolioDataSet = {
       ifcase: '學校社團',
       name: '藥物濫用防制講座',
       date: '2014',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai8.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai8.jpg',
     },
     // {
     //   type: 'Poster',
@@ -520,8 +492,7 @@ const portfolioDataSet = {
       ifcase: '學校社團',
       name: '期初社大',
       date: '2014',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai5.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai5.jpg',
     },
     {
       type: 'Poster',
@@ -530,8 +501,7 @@ const portfolioDataSet = {
       ifcase: '學校社團',
       name: '六大義工開訓',
       date: '2014',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai13.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai13.jpg',
     },
     {
       type: 'Poster',
@@ -540,8 +510,7 @@ const portfolioDataSet = {
       ifcase: '學校社團',
       name: '健康週 - 心幸福紫錐花',
       date: '2014',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai6.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai6.jpg',
     },
     {
       type: 'Poster',
@@ -550,8 +519,7 @@ const portfolioDataSet = {
       ifcase: '學校社團',
       name: '金頭腦',
       date: '2014',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai7.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai7.jpg',
     },
     {
       type: 'Poster',
@@ -560,8 +528,7 @@ const portfolioDataSet = {
       ifcase: '學校社團',
       name: '藥物濫用防制講座',
       date: '2014',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai9.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai9.jpg',
     },
     {
       type: 'Poster',
@@ -570,8 +537,7 @@ const portfolioDataSet = {
       ifcase: '學校社團',
       name: '金頭腦',
       date: '2015',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai10.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai10.jpg',
     },
     {
       type: 'Poster',
@@ -580,8 +546,7 @@ const portfolioDataSet = {
       ifcase: '學校社團',
       name: '六大義工評鑑宣傳',
       date: '2015',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai11.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai11.jpg',
     },
     {
       type: 'Poster',
@@ -590,8 +555,7 @@ const portfolioDataSet = {
       ifcase: '學校社團',
       name: '六大義工評鑑封面',
       date: '2015',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai12.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai12.jpg',
     },
     {
       type: 'Poster',
@@ -600,8 +564,7 @@ const portfolioDataSet = {
       ifcase: '學校社團',
       name: '橘衛兵幹訓中心',
       date: '2015',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai14.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/ai14.jpg',
     },
     {
       type: 'Poster',
@@ -611,8 +574,7 @@ const portfolioDataSet = {
       name: '5Q賞金獵人',
       for: '元智大學生輔組',
       date: '2016',
-      link:
-        'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/case3.jpg',
+      link: 'https://s3.amazonaws.com/jhihsiyingweb/Guand.me/works/case3.jpg',
     },
   ],
   videos: [

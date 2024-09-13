@@ -39,6 +39,7 @@ jobs:
             vue --version
             cd /var/www/html/jsy.tw/public/guand2019
             git pull origin master
+            npm install
             npm run build
             cp temp/.htaccess dist/
             cp temp/ads.txt dist/

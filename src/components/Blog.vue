@@ -13,7 +13,9 @@
         </div>
       </div>
       <div class="timeline mb-4" v-for="(line, index) in blog.timelines" :key="index">
-        <div><span class='badge badge-pill badge-light mb-2'>{{ line.tag }}</span></div>
+        <div>
+          <span class="badge badge-pill badge-light mb-2">{{ line.tag }}</span>
+        </div>
         <div v-html="line.content"></div>
       </div>
       <!-- <light-timeline :items="blog.timelines" /> -->
@@ -28,11 +30,12 @@ export default {
     return {
       title: '部落格',
       blog: {
-        title: 'JS Ying\'s Blog',
+        title: "JS Ying's Blog",
         timelines: [
           {
             tag: '2007',
-            content: '光 ~ の 設計角落 | 創始於 Yahoo! 奇摩部落格<br />以日記、楓之谷影片、ACG 心得為主。',
+            content:
+              '光 ~ の 設計角落 | 創始於 Yahoo! 奇摩部落格<br />以日記、楓之谷影片、ACG 心得為主。',
             htmlMode: true,
             color: '#8bd8f7',
             type: 'circle',
@@ -53,26 +56,30 @@ export default {
           },
           {
             tag: '2019',
-            content: '站名變更 | JS Ying\'s Blog',
+            content: "站名變更 | JS Ying's Blog",
             color: '#4f7cac',
             type: 'circle',
           },
           {
             tag: '2022',
-            content: '網域變更 | blog.jsy.tw<br />重新架了 server 順便將所有網址從子目錄變為子網域。',
+            content:
+              '網域變更 | blog.jsy.tw<br />重新架了 server 順便將所有網址從子目錄變為子網域。',
             htmlMode: true,
             color: '#8bd8f7',
             type: 'circle',
           },
         ].reverse(),
         link: 'https://blog.jsy.tw/',
-        imgUrl: 'https://jhihsiyingweb.s3.amazonaws.com/Blog/2023.03.12_wordpress-site-editor-dark-theme/2023-dark-theme.png',
+        imgUrl:
+          'https://jhihsiyingweb.s3.amazonaws.com/Blog/2023.03.12_wordpress-site-editor-dark-theme/2023-dark-theme.png',
         btn: '點此進入',
       },
       lightbox: {
         visible: false,
         index: 0,
-        imgs: ['https://jhihsiyingweb.s3.amazonaws.com/Blog/2023.03.12_wordpress-site-editor-dark-theme/2023-dark-theme.png'],
+        imgs: [
+          'https://jhihsiyingweb.s3.amazonaws.com/Blog/2023.03.12_wordpress-site-editor-dark-theme/2023-dark-theme.png',
+        ],
       },
     };
   },
@@ -92,32 +99,10 @@ export default {
 }
 
 .timeline {
-  font-size: 0.875em;
-}
-
-#blog:deep .line-container {
-  width: 50%;
-  margin: 0 auto !important;
-}
-
-@media (max-width: 768px) {
-  #blog:deep .line-container {
-    width: 100%;
-  }
-}
-
-#blog:deep .line-container .item-tag {
-  color: #dbddde !important;
-}
-
-#blog:deep .line-container {
-  color: #dbddde !important;
-  font-size: 1rem !important;
-}
-
-#blog:deep .warning {
-  color: wheat;
   font-size: 1rem;
-  margin-top: 0.5rem;
+}
+
+.badge {
+  font-size: 0.875rem;
 }
 </style>

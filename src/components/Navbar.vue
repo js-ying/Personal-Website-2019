@@ -1,26 +1,25 @@
 <template>
   <div class="row mt-5 mb-3" v-show="notProtfolioDetail">
-    <div class="col-12 col-md-2 text-center text-md-left mb-3">
+    <div class="col-12 text-center mb-3">
       <img
         :src="profile.img"
         alt="profile-img"
-        class="rounded-circle img-thumbnail img-fluid"
+        class="rounded-circle img-thumbnail img-fluid cursor-pointer"
         id="profile-img"
+        @click="openImg()"
       />
     </div>
-    <div class="col-12 col-md-10 my-auto">
+    <div class="col-12 text-center mb-2">
       <router-link to="/">
-        <h4
-          class="text-center text-md-left mb-3"
-          id="profile-name"
-          @click="toggle('')"
-        >
+        <h4 id="profile-name" @click="toggle('')">
           {{ profile.name }}
         </h4>
       </router-link>
-      <div class="row">
+    </div>
+    <div class="col-12">
+      <div class="row" id="nav-btn-row">
         <div
-          class="col-4 col-md-2 mb-3 text-nowrap"
+          class="col-4 mb-3 text-nowrap nav-btn"
           v-for="(button, index) in buttons"
           :key="index"
           @click="toggle(button.name)"
@@ -63,11 +62,25 @@ export default {
           name: '作品集',
         },
       ],
+      lightbox: {
+        visible: false,
+        index: 0,
+        imgs: [],
+      },
     };
   },
   methods: {
     toggle(button) {
       this.actived = button;
+    },
+    openImg() {
+      const lightbox = {
+        imgs: [this.profile.img],
+        index: 0,
+        visible: true,
+      };
+
+      this.$bus.$emit('openImg', lightbox);
     },
   },
   computed: {
@@ -80,6 +93,18 @@ export default {
 
 <style scoped>
 #profile-img {
-  width: 150px;
+  width: 120px;
+  cursor: pointer;
+}
+
+#nav-btn-row {
+  max-width: 576px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .nav-btn {
+    min-width: 160px;
+  }
 }
 </style>

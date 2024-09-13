@@ -1,13 +1,14 @@
 <template>
-  <div class='row' id='skill'>
-    <div class='col-md-6' v-for='(skill, index) in skills' :key='"title" + index'>
-      <div class='text-center block'>
-        <h5 class='mt-2 mb-2'> {{ skill.title }} </h5>
-        <div class="mb-2 desc">{{ skill.desc }}</div>
-        <div class="mb-3">
+  <div class="row" id="skill">
+    <div class="col-md-6" v-for="(skill, index) in skills" :key="'title' + index">
+      <div class="text-center block">
+        <h5 class="">{{ skill.title }}</h5>
+        <div class="mb-2" id="desc">{{ skill.desc }}</div>
+        <div class="mb-1" id="stack">
           <span
-            class='badge badge-pill badge-light mr-3'
-            v-for='(content, index) in skill.contents' :key='"content" + index'
+            class="badge badge-pill badge-light"
+            v-for="(content, index) in skill.contents"
+            :key="'content' + index"
           >
             {{ content }}
           </span>
@@ -32,14 +33,18 @@ export default {
 
 <style scoped>
 .block {
-  height: 80%;
+  /* height: 80%; */
+  padding: 10px 12px;
 }
 
-.desc {
+#desc {
   font-size: 1rem;
 }
 
-.badge:last-child {
-  margin-right: 0rem !important;
+#stack {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
 }
 </style>

@@ -1,8 +1,8 @@
 const skillDataSet = [
   {
     title: 'Javascript',
-    desc: '工作主要使用 Angular 和 Vue3 開發銀行內部核心系統。',
-    contents: ['Angular', 'Vue 2', 'Vue 3', 'React 18', 'TypeScript', 'jQuery'],
+    desc: '工作上以 Angular 和 Vue3 開發銀行核心系統。',
+    contents: ['Angular', 'Vue', 'React 18', 'TypeScript', 'jQuery'],
   },
   {
     title: 'CSS',
@@ -11,8 +11,8 @@ const skillDataSet = [
   },
   {
     title: 'Server-End',
-    desc: '後端經驗不多，近期工作開始使用 JAVA 開發後端業務邏輯。',
-    contents: ['JAVA', 'PHP', 'Laravel', 'MySQL'],
+    desc: '工作上以 JAVA 開發銀行核心業務邏輯。',
+    contents: ['JAVA', 'Spring Boot', 'PHP', 'Laravel'],
   },
   {
     title: 'Data Visualization',

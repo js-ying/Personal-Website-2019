@@ -34,7 +34,7 @@ jobs:
           script: |
             echo "Connected to server"
             source ~/.zshrc
-            nvm use v10.24.1
+            nvm use v12.22.12
             node -v
             vue --version
             cd /var/www/html/jsy.tw/public/guand2019

@@ -1,14 +1,16 @@
 <template>
   <div id="blog" class="text-center">
     <div class="mt-3 mb-4">
-      <div class="font-weight-bold">{{ blog.title }}</div>
-      <a :href="blog.link" target="_blank">
-        <small>
-          {{ blog.link }}
-        </small>
-      </a>
+      <div id="blog-title">
+        {{ blog.title }}<br />
+        <a :href="blog.link" target="_blank">
+          <small>
+            {{ blog.link }}
+          </small>
+        </a>
+      </div>
       <div class="d-flex justify-content-center mt-3">
-        <div class="col-12 col-md-6 block">
+        <div class="col-12 col-md-5 block">
           <img width="100%" id="blog-img" v-lazy="blog.imgUrl" @click="openImg()" />
         </div>
       </div>
@@ -94,15 +96,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#blog-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
 #blog-img {
   cursor: pointer;
 }
 
 .timeline {
   font-size: 1rem;
-}
-
-.badge {
-  font-size: 0.875rem;
 }
 </style>

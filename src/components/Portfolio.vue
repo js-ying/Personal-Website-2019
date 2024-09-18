@@ -64,8 +64,8 @@
           <span class="badge badge-dark portfolio-ifcase">
             {{ web.ifcase }}
           </span>
-          <div class="pt-2 pr-2 pl-2">
-            {{ web.name }} <br />
+          <div class="pt-2 pr-2 pl-2 portfolio-intro">
+            <span class="portfolio-name"> {{ web.name }} </span><br />
             <small> {{ web.description }} </small><br />
             <small> {{ web.date }} </small>
           </div>
@@ -88,8 +88,9 @@
           <span class="badge badge-dark portfolio-ifcase">
             {{ chatbot.ifcase }}
           </span>
-          <div class="pt-2 pr-2 pl-2">
-            {{ chatbot.name }} <br />
+          <div class="pt-2 pr-2 pl-2 portfolio-intro">
+            <span class="portfolio-name">{{ chatbot.name }}</span
+            ><br />
             <small>{{ chatbot.description }}</small
             ><br />
             <small>
@@ -118,8 +119,9 @@
           <span class="badge badge-dark portfolio-ifcase">
             {{ poster.ifcase }}
           </span>
-          <div class="pt-2 pr-2 pl-2">
-            {{ poster.name }} <br />
+          <div class="pt-2 pr-2 pl-2 portfolio-intro">
+            <span class="portfolio-name">{{ poster.name }}</span
+            ><br />
             <small>
               {{ poster.date }}
             </small>
@@ -146,8 +148,9 @@
           <span class="badge badge-dark portfolio-ifcase">
             {{ blogTheme.ifcase }}
           </span>
-          <div class="pt-2 pr-2 pl-2">
-            {{ blogTheme.name }} <br />
+          <div class="pt-2 pr-2 pl-2 portfolio-intro">
+            <span class="portfolio-name">{{ blogTheme.name }}</span
+            ><br />
             <small>
               {{ blogTheme.date }}
             </small>
@@ -171,8 +174,9 @@
           <span class="badge badge-dark portfolio-ifcase">
             {{ video.ifcase }}
           </span>
-          <div class="pt-2 pr-2 pl-2">
-            {{ video.name }} <br />
+          <div class="pt-2 pr-2 pl-2 portfolio-intro">
+            <span class="portfolio-name">{{ video.name }}</span
+            ><br />
             <small>{{ video.description }}</small
             ><br />
             <small>
@@ -312,6 +316,13 @@ export default {
   /* Chrome/Safari/Webkit */
   width: 0px;
   height: 0px;
+}
+
+.portfolio-intro {
+  font-size: 1.1425rem;
+}
+
+.portfolio-name {
 }
 
 #sort-by-date-btn {

@@ -11,9 +11,9 @@
     </div>
     <div class="col-12 text-center mb-2">
       <router-link to="/">
-        <h4 id="profile-name" @click="toggle('')">
+        <div id="profile-name" @click="toggle('')">
           {{ profile.name }}
-        </h4>
+        </div>
       </router-link>
     </div>
     <div class="col-12">
@@ -97,9 +97,17 @@ export default {
   cursor: pointer;
 }
 
+#profile-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
 #nav-btn-row {
   max-width: 576px;
   margin: 0 auto;
+}
+
+#nav-btn-row .nav-btn a {
 }
 
 @media (min-width: 768px) {

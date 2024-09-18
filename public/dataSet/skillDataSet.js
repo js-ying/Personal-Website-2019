@@ -11,8 +11,8 @@ const skillDataSet = [
   },
   {
     title: 'Server-End',
-    desc: '工作上以 JAVA 開發銀行核心業務邏輯。',
-    contents: ['JAVA', 'Spring Boot', 'PHP', 'Laravel'],
+    desc: '工作上以 Java Spring Boot 開發銀行核心業務邏輯。',
+    contents: ['Java', 'Spring Boot', 'PHP', 'Laravel'],
   },
   {
     title: 'Data Visualization',

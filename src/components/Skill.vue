@@ -1,10 +1,10 @@
 <template>
-  <div class="row" id="skill">
+  <div class="row justify-content-center" id="skill">
     <div class="col-md-6" v-for="(skill, index) in skills" :key="'title' + index">
       <div class="text-center block">
-        <h5 class="">{{ skill.title }}</h5>
-        <div class="mb-2" id="desc">{{ skill.desc }}</div>
-        <div class="mb-1" id="stack">
+        <span class="skill-title">{{ skill.title }}</span>
+        <div class="mb-2 skill-desc">{{ skill.desc }}</div>
+        <div class="mb-1 skill-stack">
           <span
             class="badge badge-pill badge-light"
             v-for="(content, index) in skill.contents"
@@ -37,11 +37,15 @@ export default {
   padding: 10px 12px;
 }
 
-#desc {
-  font-size: 1rem;
+.skill-title {
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
-#stack {
+.skill-desc {
+}
+
+.skill-stack {
   display: flex;
   justify-content: center;
   gap: 5px;

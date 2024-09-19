@@ -129,7 +129,7 @@ const portfolioDataSet = {
       date: '2024',
       description: '專為通勤族設計的時刻表。',
       link: 'https://traintime.jsy.tw/',
-      keywords: ['React 18', 'Next.js', 'TailwindCSS', 'NextUI', 'Mui', 'RWD'],
+      keywords: ['React 18', 'Next.js', 'TailwindCSS', 'RWD'],
     },
   ],
   chatbots: [

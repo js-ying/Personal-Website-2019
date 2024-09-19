@@ -1,6 +1,6 @@
 <template>
   <div class="row justify-content-center" id="skill">
-    <div class="col-md-6" v-for="(skill, index) in skills" :key="'title' + index">
+    <div class="col-md-8" v-for="(skill, index) in skills" :key="'title' + index">
       <div class="text-center block">
         <span class="skill-title">{{ skill.title }}</span>
         <div class="mb-2 skill-desc">{{ skill.desc }}</div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="home text-center">
+  <div id="home" class="text-center">
     <section>
       <span class="badge badge-pill badge-light mb-2">工作經歷</span>
       <div>
@@ -21,6 +21,7 @@
       </div>
     </section>
     <section>
+      <!-- <span class="badge badge-pill badge-light mb-2">關於我</span> -->
       <p class="">喜歡柴犬和梁靜茹，擅長前端開發。<br />樂於學習各種前端新知，僅因前端很美。</p>
     </section>
     <section id="contact-section">
@@ -32,7 +33,7 @@
           v-for="(contact, index) in contacts"
           :key="index"
         >
-          <span class="badge badge-pill badge-secondary">
+          <span class="badge badge-pill badge-secondary clickable">
             {{ contact.name }}
           </span>
         </a>
@@ -81,14 +82,5 @@ export default {
 section {
   font-size: 1rem;
   margin-bottom: 1.4rem;
-}
-
-#contact-section .badge:hover {
-  background-color: #5dadf2;
-  cursor: pointer;
-}
-
-#contact-section .badge:last-child {
-  margin-right: 0rem !important;
 }
 </style>

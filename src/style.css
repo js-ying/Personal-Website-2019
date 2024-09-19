@@ -51,3 +51,8 @@ img[lazy='loading'] {
 .badge {
   font-size: 0.875rem;
 }
+
+.badge.clickable:hover {
+  background-color: #5dadf2;
+  cursor: pointer;
+}

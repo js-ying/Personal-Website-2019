@@ -1,8 +1,8 @@
 const skillDataSet = [
   {
     title: 'Javascript',
-    desc: '工作上以 Angular 和 Vue3 開發銀行核心系統。',
-    contents: ['Angular', 'Vue', 'React 18', 'TypeScript', 'jQuery'],
+    desc: '工作上以 Angular 和 Vue3 開發銀行核心系統；Side project 以 React18 為主。',
+    contents: ['Angular', 'Vue', 'React', 'TypeScript', 'jQuery'],
   },
   {
     title: 'CSS',
@@ -16,7 +16,7 @@ const skillDataSet = [
   },
   {
     title: 'Data Visualization',
-    desc: '學生時期常使用各種資料視覺工具打造 Dahsboard。',
+    desc: '學生時期常使用各種資料視覺工具打造 dahsboard。',
     contents: ['Google Charts', 'D3.js', 'Ploty.js', 'Highcharts.js'],
   },
   {

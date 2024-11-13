@@ -1,12 +1,13 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Home from '@/components/Home.vue';
-import Skill from '@/components/Skill.vue';
+import ForbiddenComponent from '@/components/403.vue';
+import NotFoundComponent from '@/components/404.vue';
 import Blog from '@/components/Blog.vue';
+import Home from '@/components/Home.vue';
 import Portfolio from '@/components/Portfolio.vue';
 import PortfolioDetail from '@/components/PortfolioDetail.vue';
-import NotFoundComponent from '@/components/404.vue';
+import Skill from '@/components/Skill.vue';
 
 Vue.use(Router);
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/portfolio-detail',
       name: 'PortfolioDetail',
       component: PortfolioDetail,
+    },
+    {
+      path: '/403',
+      name: 'ForbiddenComponent',
+      component: ForbiddenComponent,
     },
     {
       path: '*',

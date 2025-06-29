@@ -73,14 +73,14 @@ export default {
         ].reverse(),
         link: 'https://blog.jsy.tw/',
         imgUrl:
-          'https://jhihsiyingweb.s3.amazonaws.com/Blog/2023.03.12_wordpress-site-editor-dark-theme/2023-dark-theme.png',
+          'https://jhihsiyingweb.s3.us-east-1.amazonaws.com/Guand.me/works/wordpress-2025.jpeg',
         btn: '點此進入',
       },
       lightbox: {
         visible: false,
         index: 0,
         imgs: [
-          'https://jhihsiyingweb.s3.amazonaws.com/Blog/2023.03.12_wordpress-site-editor-dark-theme/2023-dark-theme.png',
+          'https://jhihsiyingweb.s3.us-east-1.amazonaws.com/Guand.me/works/wordpress-2025.jpeg',
         ],
       },
     };

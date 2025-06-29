@@ -71,30 +71,31 @@
           </div>
         </div>
       </div>
-      <!-- 聊天機器人 -->
+      <!-- 部落格主題 -->
       <div
-        v-for="(chatbot, index) in portfolios.chatbots"
-        v-show="showed === chatbot.type"
-        :key="'chatbot' + index"
+        v-for="(blogTheme, index) in portfolios.blogThemes"
+        v-show="showed === blogTheme.type"
+        :key="'blogTheme' + index"
         class="col-lg-4 col-md-6 col-sm-12"
       >
         <div class="block p-2 mb-4">
-          <a :href="chatbot.link" target="_blank">
-            <img v-lazy="imgDir + chatbot.img" :alt="chatbot.name" class="img-fluid" />
-          </a>
-          <span class="badge badge-primary portfolio-type">
-            {{ chatbot.type }}
+          <img
+            v-lazy="imgDir + blogTheme.img"
+            :alt="blogTheme.name"
+            class="img-fluid blog-theme-img"
+            @click="openImg(index, 'blogThemeImgs')"
+          />
+          <span class="badge badge-danger portfolio-type">
+            {{ blogTheme.type }}
           </span>
           <span class="badge badge-dark portfolio-ifcase">
-            {{ chatbot.ifcase }}
+            {{ blogTheme.ifcase }}
           </span>
           <div class="pt-2 pr-2 pl-2 portfolio-intro">
-            <span class="portfolio-name">{{ chatbot.name }}</span
-            ><br />
-            <small>{{ chatbot.description }}</small
+            <span class="portfolio-name">{{ blogTheme.name }}</span
             ><br />
             <small>
-              {{ chatbot.date }}
+              {{ blogTheme.date }}
             </small>
           </div>
         </div>
@@ -128,35 +129,6 @@
           </div>
         </div>
       </div>
-      <!-- 部落格主題 -->
-      <div
-        v-for="(blogTheme, index) in portfolios.blogThemes"
-        v-show="showed === blogTheme.type"
-        :key="'blogTheme' + index"
-        class="col-lg-4 col-md-6 col-sm-12"
-      >
-        <div class="block p-2 mb-4">
-          <img
-            v-lazy="imgDir + blogTheme.img"
-            :alt="blogTheme.name"
-            class="img-fluid blog-theme-img"
-            @click="openImg(index, 'blogThemeImgs')"
-          />
-          <span class="badge badge-danger portfolio-type">
-            {{ blogTheme.type }}
-          </span>
-          <span class="badge badge-dark portfolio-ifcase">
-            {{ blogTheme.ifcase }}
-          </span>
-          <div class="pt-2 pr-2 pl-2 portfolio-intro">
-            <span class="portfolio-name">{{ blogTheme.name }}</span
-            ><br />
-            <small>
-              {{ blogTheme.date }}
-            </small>
-          </div>
-        </div>
-      </div>
       <!-- 影片 -->
       <div
         v-for="(video, index) in portfolios.videos"
@@ -185,6 +157,34 @@
           </div>
         </div>
       </div>
+      <!-- 聊天機器人 -->
+      <div
+        v-for="(chatbot, index) in portfolios.chatbots"
+        v-show="showed === chatbot.type"
+        :key="'chatbot' + index"
+        class="col-lg-4 col-md-6 col-sm-12"
+      >
+        <div class="block p-2 mb-4">
+          <a :href="chatbot.link" target="_blank">
+            <img v-lazy="imgDir + chatbot.img" :alt="chatbot.name" class="img-fluid" />
+          </a>
+          <span class="badge badge-primary portfolio-type">
+            {{ chatbot.type }}
+          </span>
+          <span class="badge badge-dark portfolio-ifcase">
+            {{ chatbot.ifcase }}
+          </span>
+          <div class="pt-2 pr-2 pl-2 portfolio-intro">
+            <span class="portfolio-name">{{ chatbot.name }}</span
+            ><br />
+            <small>{{ chatbot.description }}</small
+            ><br />
+            <small>
+              {{ chatbot.date }}
+            </small>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -198,10 +198,10 @@ export default {
     return {
       buttons: [
         { name: 'Web' },
-        { name: 'Chatbot' },
-        { name: 'Poster' },
         { name: 'Blog-Theme' },
+        { name: 'Poster' },
         { name: 'Video' },
+        { name: 'Chatbot' },
       ],
       actived: 'Web',
       showed: 'Web',

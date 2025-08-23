@@ -1,6 +1,6 @@
 <template>
   <div id="blog" class="text-center">
-    <div class="mt-3 mb-4">
+    <div class="mb-4">
       <div id="blog-title">
         {{ blog.title }}<br />
         <a :href="blog.link" target="_blank">

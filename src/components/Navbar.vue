@@ -9,17 +9,17 @@
         @click="openImg()"
       />
     </div>
-    <div class="col-12 text-center mb-2">
+    <div class="col-12 text-center mb-3">
       <router-link to="/">
         <div id="profile-name" @click="toggle('')">
           {{ profile.name }}
         </div>
       </router-link>
     </div>
-    <div class="col-12">
-      <div class="row" id="nav-btn-row">
+    <div class="col-12" id="nav-btn-row">
+      <div class="row">
         <div
-          class="col-4 mb-3 text-nowrap nav-btn"
+          class="col-4 mb-2 text-nowrap nav-btn"
           v-for="(button, index) in buttons"
           :key="index"
           @click="toggle(button.name)"

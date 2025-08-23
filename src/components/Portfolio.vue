@@ -190,8 +190,8 @@
 </template>
 
 <script>
-import LazyImage from './LazyImage.vue';
 import portfolioDataSet from '../../public/dataSet/portfolioDataSet';
+import LazyImage from './LazyImage.vue';
 
 export default {
   name: 'Portfolio',
@@ -278,7 +278,7 @@ export default {
   border-right: 0px;
   border-bottom: 3px solid white;
   border-left: 0px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .portfolio-type-btn:hover {
@@ -327,6 +327,7 @@ export default {
 }
 
 .portfolio-name {
+  font-weight: 500;
 }
 
 #sort-by-date-btn {

@@ -33,11 +33,11 @@
       >
         <div class="block">
           <a :href="web.link" target="_blank">
-            <img
-              v-lazy="imgDir + web.img"
+            <lazy-image
+              :src="imgDir + web.img"
               :alt="web.name"
               class="img-fluid web-img"
-              @click="!web.link && openImg(index, 'webImgs')"
+              @click.native="!web.link && openImg(index, 'webImgs')"
             />
           </a>
           <!-- <router-link
@@ -46,7 +46,7 @@
               params: { data: web, imgSrc: imgDir + web.img },
             }"
           >
-            <img v-lazy="imgDir + web.img" :alt="web.name" class="img-fluid" />
+            <lazy-image :src="imgDir + web.img" :alt="web.name" class="img-fluid" />
           </router-link> -->
           <div class="portfolio-keywords">
             <span
@@ -79,11 +79,11 @@
         class="col-lg-4 col-md-6 col-sm-12"
       >
         <div class="block p-2 mb-4">
-          <img
-            v-lazy="imgDir + blogTheme.img"
+          <lazy-image
+            :src="imgDir + blogTheme.img"
             :alt="blogTheme.name"
             class="img-fluid blog-theme-img"
-            @click="openImg(index, 'blogThemeImgs')"
+            @click.native="openImg(index, 'blogThemeImgs')"
           />
           <span class="badge badge-danger portfolio-type">
             {{ blogTheme.type }}
@@ -108,11 +108,11 @@
         class="col-lg-4 col-md-6 col-sm-12"
       >
         <div class="block p-2 mb-4">
-          <img
-            v-lazy="imgDir + poster.img"
+          <lazy-image
+            :src="imgDir + poster.img"
             :alt="poster.name"
             class="img-fluid poster-img"
-            @click="openImg(index, 'posterImgs')"
+            @click.native="openImg(index, 'posterImgs')"
           />
           <span class="badge badge-danger portfolio-type">
             {{ poster.type }}
@@ -138,7 +138,7 @@
       >
         <div class="block p-2 mb-4">
           <a :href="video.link" target="_blank">
-            <img v-lazy="imgDir + video.img" :alt="video.name" class="img-fluid" />
+            <lazy-image :src="imgDir + video.img" :alt="video.name" class="img-fluid" />
           </a>
           <span class="badge badge-danger portfolio-type">
             {{ video.type }}
@@ -166,7 +166,7 @@
       >
         <div class="block p-2 mb-4">
           <a :href="chatbot.link" target="_blank">
-            <img v-lazy="imgDir + chatbot.img" :alt="chatbot.name" class="img-fluid" />
+            <lazy-image :src="imgDir + chatbot.img" :alt="chatbot.name" class="img-fluid" />
           </a>
           <span class="badge badge-primary portfolio-type">
             {{ chatbot.type }}
@@ -190,10 +190,14 @@
 </template>
 
 <script>
+import LazyImage from './LazyImage.vue';
 import portfolioDataSet from '../../public/dataSet/portfolioDataSet';
 
 export default {
   name: 'Portfolio',
+  components: {
+    LazyImage,
+  },
   data() {
     return {
       buttons: [

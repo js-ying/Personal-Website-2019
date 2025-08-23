@@ -3,7 +3,7 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import VueEasyLightbox from 'vue-easy-lightbox';
-import VueLazyload from 'vue-lazyload';
+
 import LightTimeline from 'vue-light-timeline';
 
 import Vue from 'vue';
@@ -12,11 +12,7 @@ import router from './router';
 import './style.css';
 
 Vue.use(LightTimeline);
-Vue.use(VueLazyload, {
-  preLoad: 1.3,
-  loading: './loading.svg',
-  attempt: 1,
-});
+
 Vue.use(VueEasyLightbox);
 
 Vue.config.productionTip = false;

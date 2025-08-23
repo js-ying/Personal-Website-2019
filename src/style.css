@@ -44,9 +44,7 @@ a:hover {
   box-shadow: none;
 }
 
-img[lazy='loading'] {
-  max-height: 64px;
-}
+
 
 .block {
   border: 1px solid white;

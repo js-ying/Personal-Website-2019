@@ -11,7 +11,7 @@
       </div>
       <div class="d-flex justify-content-center mt-3">
         <div class="col-12 col-md-5 block">
-          <img width="100%" id="blog-img" v-lazy="blog.imgUrl" @click="openImg()" />
+          <lazy-image :src="blog.imgUrl" alt="Blog Image" @click.native="openImg()" />
         </div>
       </div>
       <div class="timeline mb-4" v-for="(line, index) in blog.timelines" :key="index">
@@ -26,8 +26,13 @@
 </template>
 
 <script>
+import LazyImage from './LazyImage.vue';
+
 export default {
   name: 'Blog',
+  components: {
+    LazyImage,
+  },
   data() {
     return {
       title: '部落格',

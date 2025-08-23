@@ -1,12 +1,18 @@
 <template>
-  <div class="container" id="app">
-    <Navbar />
-    <keep-alive :include="['Blog', 'Portfolio']">
-      <router-view />
-    </keep-alive>
+  <div>
+    <div class="container">
+      <Navbar />
+      <keep-alive :include="['Blog', 'Portfolio']">
+        <router-view />
+      </keep-alive>
 
-    <vue-easy-lightbox :visible="lightbox.visible" :imgs="lightbox.imgs" :index="lightbox.index"
-      @hide="hideImg"></vue-easy-lightbox>
+      <vue-easy-lightbox
+        :visible="lightbox.visible"
+        :imgs="lightbox.imgs"
+        :index="lightbox.index"
+        @hide="hideImg"
+      ></vue-easy-lightbox>
+    </div>
   </div>
 </template>
 
@@ -42,7 +48,7 @@ export default {
 
 <style scoped>
 ::v-deep .vel-modal {
-  background: rgba(0,0,0,.7) !important;
+  background: rgba(0, 0, 0, 0.7) !important;
 }
 
 ::v-deep .vel-img-wrapper {

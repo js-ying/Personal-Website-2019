@@ -44,8 +44,7 @@ export default {
     return {
       profile: {
         name: 'JS Ying',
-        // eslint-disable-next-line global-require
-        img: require('@/assets/img/my-photo.jpg'),
+        img: 'https://jhihsiyingweb.s3.us-east-1.amazonaws.com/Guand.me/my-photo.jpg',
       },
       actived: '',
       buttons: [

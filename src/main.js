@@ -2,9 +2,9 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LightTimeline from 'vue-light-timeline';
-import VueLazyload from 'vue-lazyload';
 import VueEasyLightbox from 'vue-easy-lightbox';
+import VueLazyload from 'vue-lazyload';
+import LightTimeline from 'vue-light-timeline';
 
 import Vue from 'vue';
 import App from './App.vue';
@@ -32,4 +32,16 @@ new Vue({
     App,
   },
   template: '<App/>',
+  mounted() {
+    const photo = new Image();
+    photo.src = 'https://jhihsiyingweb.s3.us-east-1.amazonaws.com/Guand.me/my-photo.jpg';
+
+    const wallpaper = new Image();
+    wallpaper.src = 'https://jhihsiyingweb.s3.us-east-1.amazonaws.com/Guand.me/my-wallpaper.jpg';
+    wallpaper.onload = () => {
+      document.body.classList.add('loaded');
+      // const loading = document.getElementById('loading'); --- IGNORE ---
+      // if (loading) loading.style.display = 'none'; ---
+    };
+  },
 });

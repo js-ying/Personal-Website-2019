@@ -1,18 +1,16 @@
 <template>
-  <div>
-    <div class="container">
-      <Navbar />
-      <keep-alive :include="['Blog', 'Portfolio']">
-        <router-view />
-      </keep-alive>
+  <div class="container">
+    <Navbar />
+    <keep-alive :include="['Blog', 'Portfolio']">
+      <router-view />
+    </keep-alive>
 
-      <vue-easy-lightbox
-        :visible="lightbox.visible"
-        :imgs="lightbox.imgs"
-        :index="lightbox.index"
-        @hide="hideImg"
-      ></vue-easy-lightbox>
-    </div>
+    <vue-easy-lightbox
+      :visible="lightbox.visible"
+      :imgs="lightbox.imgs"
+      :index="lightbox.index"
+      @hide="hideImg"
+    ></vue-easy-lightbox>
   </div>
 </template>
 

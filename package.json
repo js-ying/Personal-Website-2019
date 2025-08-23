@@ -14,7 +14,6 @@
     "popper.js": "^1.14.6",
     "vue": "^2.6.11",
     "vue-easy-lightbox": "^0.23.0",
-    "vue-light-timeline": "^1.0.1",
     "vue-router": "^3.5.4"
   },
   "devDependencies": {

@@ -4,14 +4,10 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import VueEasyLightbox from 'vue-easy-lightbox';
 
-import LightTimeline from 'vue-light-timeline';
-
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import './style.css';
-
-Vue.use(LightTimeline);
 
 Vue.use(VueEasyLightbox);
 

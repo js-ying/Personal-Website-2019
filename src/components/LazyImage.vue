@@ -20,7 +20,7 @@ export default {
     },
     aspectRatio: {
       type: String,
-      default: '56.25%', // 預設比例為 16:9，透過 paddingBottom 模擬高度
+      default: '66.66%', // 預設比例為 4:6，透過 paddingBottom 模擬高度
     },
   },
   data() {

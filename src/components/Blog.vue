@@ -11,7 +11,7 @@
       </div>
       <div class="d-flex justify-content-center mt-3">
         <div class="col-12 col-md-5 block">
-          <lazy-image :src="blog.imgUrl" alt="Blog Image" @click.native="openImg()" />
+          <lazy-image :src="blog.imgUrl" alt="Blog Image" id="blog-img" @click.native="openImg()" />
         </div>
       </div>
       <div class="timeline mb-4" v-for="(line, index) in blog.timelines" :key="index">

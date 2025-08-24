@@ -307,7 +307,7 @@ export default {
 }
 
 .portfolio-keywords {
-  margin-top: 5px;
+  margin-top: 7px;
   overflow: auto;
   white-space: nowrap;
   scrollbar-width: none;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="" style="background-color: #282c34;">
 
 <head>
   <meta charset="utf-8" />
@@ -21,8 +21,15 @@
         properly without JavaScript enabled. Please enable it to
         continue.</strong>
   </noscript>
-  <div id="app"></div>
-  <!-- built files will be auto injected -->
+
+  <div id="loading-wrapper"
+    style="color: white; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 16px;">
+    <img src="<%= BASE_URL %>loading.svg" />
+  </div>
+
+  <div id="app-wrapper" style="opacity: 0;">
+    <div id="app"></div>
+  </div>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48330157-3"></script>

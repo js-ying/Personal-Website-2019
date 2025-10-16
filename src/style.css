@@ -1,5 +1,10 @@
-html {
-  background-color: #282c34;
+body {
+  font-family: 'Noto Sans TC', 'Heiti TC', 'PingFang TC', 'Microsoft JhengHei', 'Open Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  background-color: transparent;
 }
 
 body:before {
@@ -9,27 +14,23 @@ body:before {
   left: 0;
   top: 0;
   width: 100%;
-  /* Set height to the largest possible viewport height to avoid resizing on mobile when browser UI appears/hides. */
   height: 100vh; /* Fallback */
   height: 100lvh;
   z-index: -10;
+}
+
+body.loaded:before {
   background: url('https://jhihsiyingweb.s3.us-east-1.amazonaws.com/Guand.me/my-wallpaper.jpg') no-repeat center center;
   background-size: cover;
 }
 
-body {
-  font-family: 'Noto Sans TC', 'Heiti TC', 'PingFang TC', 'Microsoft JhengHei', 'Open Sans', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  color: white;
-  opacity: 0;
-  background-color: transparent;
+body.loaded #loading-wrapper {
+  display: none;
 }
 
-body.loaded {
-  transition: opacity 0.3s;
-  opacity: 1;
+body.loaded #app-wrapper {
+  opacity: 1 !important;
+  transition: opacity 2s;
 }
 
 a {

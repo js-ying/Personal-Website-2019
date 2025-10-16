@@ -32,8 +32,6 @@ new Vue({
     wallpaper.src = 'https://jhihsiyingweb.s3.us-east-1.amazonaws.com/Guand.me/my-wallpaper.jpg';
     wallpaper.onload = () => {
       document.body.classList.add('loaded');
-      // const loading = document.getElementById('loading'); --- IGNORE ---
-      // if (loading) loading.style.display = 'none'; ---
     };
   },
 });

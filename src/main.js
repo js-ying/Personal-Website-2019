@@ -7,7 +7,7 @@ import VueEasyLightbox from 'vue-easy-lightbox';
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
-import './style.css';
+import './style.scss';
 
 Vue.use(VueEasyLightbox);
 
@@ -24,14 +24,5 @@ new Vue({
     App,
   },
   template: '<App/>',
-  mounted() {
-    const photo = new Image();
-    photo.src = 'https://jhihsiyingweb.s3.us-east-1.amazonaws.com/Guand.me/my-photo.jpg';
-
-    const wallpaper = new Image();
-    wallpaper.src = 'https://jhihsiyingweb.s3.us-east-1.amazonaws.com/Guand.me/my-wallpaper.jpg';
-    wallpaper.onload = () => {
-      document.body.classList.add('loaded');
-    };
-  },
+  mounted() {},
 });

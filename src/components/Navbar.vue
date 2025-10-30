@@ -1,12 +1,13 @@
 <template>
   <div class="row mt-5 mb-3" v-show="notProtfolioDetail">
-    <div class="col-12 text-center mb-3">
-      <img
+    <div class="col-12 d-flex justify-content-center mb-3">
+      <lazy-image
         :src="profile.img"
         alt="profile-img"
-        class="rounded-circle img-thumbnail img-fluid cursor-pointer"
+        class="rounded-circle img-thumbnail cursor-pointer"
         id="profile-img"
-        @click="openImg()"
+        aspectRatio="0"
+        @click.native="openImg()"
       />
     </div>
     <div class="col-12 text-center mb-3">
@@ -38,8 +39,13 @@
 </template>
 
 <script>
+import LazyImage from './LazyImage.vue';
+
 export default {
   name: 'Navbar',
+  components: {
+    LazyImage,
+  },
   data() {
     return {
       profile: {
@@ -92,8 +98,11 @@ export default {
 
 <style scoped>
 #profile-img {
+  height: 120px;
   width: 120px;
   cursor: pointer;
+  background-color: transparent;
+  border-width: 4px;
 }
 
 #profile-name {

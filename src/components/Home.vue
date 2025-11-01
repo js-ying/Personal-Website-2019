@@ -20,10 +20,6 @@
         <span class="small">2013 - 2017</span>
       </div>
     </section>
-    <section>
-      <!-- <span class="badge badge-pill badge-light mb-2">關於我</span> -->
-      <p class="">喜歡柴犬和梁靜茹，擅長前端開發。<br />樂於學習各種前端新知，僅因前端很美。</p>
-    </section>
     <section id="contact-section">
       <p>
         <a
@@ -33,9 +29,7 @@
           v-for="(contact, index) in contacts"
           :key="index"
         >
-          <span class="badge badge-pill badge-secondary clickable">
-            {{ contact.name }}
-          </span>
+          <i :class="contact.svg" class="up-on-hover" style="font-size: 1.5rem"></i>
         </a>
       </p>
     </section>
@@ -51,10 +45,12 @@ export default {
         {
           name: 'E-mail',
           link: 'mailto:jsying1994@gmail.com',
+          svg: 'bi bi-envelope-fill',
         },
         {
           name: 'Github',
           link: 'https://github.com/js-ying',
+          svg: 'bi bi-github',
         },
       ],
     };

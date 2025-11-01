@@ -8,6 +8,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import './style.scss';
+import initRipple from './utils/ripple';
 
 Vue.use(VueEasyLightbox);
 
@@ -17,6 +18,8 @@ Vue.config.devtools = true;
 Vue.prototype.$bus = new Vue();
 
 /* eslint-disable no-new */
+initRipple();
+
 new Vue({
   el: '#app',
   router,

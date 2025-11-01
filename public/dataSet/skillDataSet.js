@@ -1,7 +1,7 @@
 const skillDataSet = [
   {
     title: 'Javascript',
-    desc: '工作上以 Angular 和 Vue3 開發銀行核心系統；Side project 以 React18 為主。',
+    desc: '工作主要以 Angular 和 Vue3 開發銀行內部核心系統；Side project 以 React18 為主。',
     contents: ['Angular', 'Vue', 'React', 'Next.js', 'TypeScript', 'jQuery'],
   },
   {
@@ -10,8 +10,8 @@ const skillDataSet = [
     contents: ['Tailwind', 'Bootstrap', 'Sass', 'Responsive Web'],
   },
   {
-    title: 'Server-End',
-    desc: '工作上以 Java Spring Boot 開發銀行核心業務邏輯；Side project 以 Express.js 為主。',
+    title: 'Backend',
+    desc: '工作主要以 Java Spring Boot 開發銀行核心業務邏輯；Side project 以 Express.js 為主。',
     contents: ['Java', 'Spring Boot', 'Node.js', 'Express.js', 'PHP', 'Laravel'],
   },
   {

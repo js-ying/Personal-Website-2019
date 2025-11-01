@@ -5,8 +5,8 @@
       <button
         v-for="(button, index) in buttons"
         :key="index"
-        :class="{ active: actived === button.name }"
-        class="btn btn-outline-light portfolio-type-btn mr-1 mb-3 ml-1"
+        :class="{ active: activated === button.name }"
+        class="liquid-glass-button portfolio-type-btn mr-1 mb-3 ml-1"
         @click="toggle(button.name)"
       >
         {{ button.name }}
@@ -14,13 +14,16 @@
     </div>
     <!-- 依時間排序按鈕 -->
     <div class="d-flex align-items-end flex-column mb-1" id="sortby-btn">
-      <button
+      <div
+        tabindex="0"
+        role="button"
         id="sort-by-date-btn"
-        class="btn btn-outline-light portfolio-type-btn"
         @click="reverse()"
+        @keydown.enter="reverse"
+        @keydown.space.prevent="reverse"
       >
         {{ sortByDateBtnDesc }}
-      </button>
+      </div>
     </div>
     <!-- 作品清單 -->
     <div class="row" id="portfolio-list">
@@ -40,14 +43,6 @@
               @click.native="!web.link && openImg(index, 'webImgs')"
             />
           </a>
-          <!-- <router-link
-            :to="{
-              name: 'PortfolioDetail',
-              params: { data: web, imgSrc: imgDir + web.img },
-            }"
-          >
-            <lazy-image :src="imgDir + web.img" :alt="web.name" class="img-fluid" />
-          </router-link> -->
           <div class="portfolio-keywords">
             <span
               class="badge badge-pill badge-light"
@@ -207,7 +202,7 @@ export default {
         { name: 'Video' },
         { name: 'Chatbot' },
       ],
-      actived: 'Web',
+      activated: 'Web',
       showed: 'Web',
       portfolios: portfolioDataSet,
       toggleSortByDate: true,
@@ -229,7 +224,7 @@ export default {
   },
   methods: {
     toggle(button) {
-      this.actived = button;
+      this.activated = button;
       this.showed = button;
     },
     reverse() {
@@ -273,41 +268,26 @@ export default {
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
 .portfolio-type-btn {
-  border-radius: 0%;
-  border-top: 0px;
-  border-right: 0px;
-  border-bottom: 3px solid white;
-  border-left: 0px;
-  font-weight: 600;
-}
-
-.portfolio-type-btn:hover {
-  background-color: transparent;
-  color: #8bd8f7;
-  border-bottom: 3px solid #5dadf2;
-}
-
-.portfolio-type-btn.active,
-.portfolio-type-btn:active {
-  background-color: transparent !important;
-  color: #8bd8f7 !important;
-  border-bottom: 3px solid #5dadf2 !important;
+  width: auto;
+  min-width: auto;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
 }
 
 .portfolio-type {
   position: absolute;
   top: 15px;
-  right: 30px;
+  right: 15px;
 }
 
 .portfolio-ifcase {
   position: absolute;
   top: 15px;
-  left: 30px;
+  left: 15px;
 }
 
 .portfolio-keywords {
-  margin-top: 7px;
+  margin-top: 15px;
   overflow: auto;
   white-space: nowrap;
   scrollbar-width: none;
@@ -317,7 +297,6 @@ export default {
 
 .portfolio-keywords::-webkit-scrollbar {
   background: transparent;
-  /* Chrome/Safari/Webkit */
   width: 0px;
   height: 0px;
 }
@@ -331,20 +310,15 @@ export default {
 }
 
 #sort-by-date-btn {
-  width: 100px;
+  width: fit-content;
   font-size: 1rem;
   text-align: right;
   border-bottom: 0px;
   padding: 0;
   margin-bottom: 0.2rem;
   font-weight: 400;
-}
-
-#sort-by-date-btn:hover,
-#sort-by-date-btn:active {
-  color: white !important;
-  background-color: transparent;
-  border-bottom: 0px !important;
+  cursor: pointer;
+  user-select: none;
 }
 
 .web-img,

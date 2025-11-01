@@ -82,6 +82,7 @@ export default {
   );
   background-size: 200% 100%;
   animation: skeleton-shimmer 2.5s infinite;
+  border-radius: 10px;
 }
 
 @keyframes skeleton-shimmer {

@@ -1,34 +1,33 @@
 <template>
-  <div class="row mt-5 mb-3" v-show="notProtfolioDetail">
+  <div class="row mt-5 mb-3">
     <div class="col-12 d-flex justify-content-center mb-3">
+      <!-- 大頭照 -->
       <lazy-image
         :src="profile.img"
         alt="profile-img"
-        class="rounded-circle img-thumbnail cursor-pointer"
+        class="rounded-circle cursor-pointer"
         id="profile-img"
         aspectRatio="0"
         @click.native="openImg()"
       />
     </div>
     <div class="col-12 text-center mb-3">
+      <!-- 名字 (導向首頁) -->
       <router-link to="/">
-        <div id="profile-name" @click="toggle('')">
+        <span id="profile-name" @click="toggle('')">
           {{ profile.name }}
-        </div>
+        </span>
       </router-link>
     </div>
     <div class="col-12" id="nav-btn-row">
       <div class="row">
-        <div
-          class="col-4 mb-2 text-nowrap nav-btn"
-          v-for="(button, index) in buttons"
-          :key="index"
-          @click="toggle(button.name)"
-        >
+        <!-- 導覽列按鈕 -->
+        <div class="col-4" v-for="(button, index) in buttons" :key="index">
           <router-link
-            class="btn btn-outline-light btn-block"
-            :class="{ active: actived === button.name }"
+            class="liquid-glass-button"
+            :class="{ active: activated === button.name }"
             :to="button.link"
+            @click.native="toggle(button.name)"
           >
             {{ button.name }}
           </router-link>
@@ -52,7 +51,7 @@ export default {
         name: 'JS Ying',
         img: 'https://jhihsiyingweb.s3.us-east-1.amazonaws.com/Guand.me/my-photo.jpg',
       },
-      actived: '',
+      activated: '',
       buttons: [
         {
           link: '/skill',
@@ -76,7 +75,7 @@ export default {
   },
   methods: {
     toggle(button) {
-      this.actived = button;
+      this.activated = button;
     },
     openImg() {
       const lightbox = {
@@ -88,11 +87,6 @@ export default {
       this.$bus.$emit('openImg', lightbox);
     },
   },
-  computed: {
-    notProtfolioDetail() {
-      return this.$route.name !== 'PortfolioDetail';
-    },
-  },
 };
 </script>
 
@@ -102,7 +96,7 @@ export default {
   width: 120px;
   cursor: pointer;
   background-color: transparent;
-  border-width: 4px;
+  border: 4px solid rgba(235, 240, 255, 0.9);
 }
 
 #profile-name {
@@ -113,14 +107,5 @@ export default {
 #nav-btn-row {
   max-width: 576px;
   margin: 0 auto;
-}
-
-#nav-btn-row .nav-btn a {
-}
-
-@media (min-width: 768px) {
-  .nav-btn {
-    min-width: 160px;
-  }
 }
 </style>

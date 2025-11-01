@@ -1,18 +1,22 @@
-@function multiple-box-shadow($n) {
-  $value: '#{random(2000)}px #{random(2000)}px #FFF';
-  @for $i from 2 through $n {
-    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
-  }
-  @return unquote($value);
-}
+@import './star.scss';
 
-$shadows-small:  multiple-box-shadow(300);
-$shadows-medium: multiple-box-shadow(100);
-$shadows-big:    multiple-box-shadow(70);
-
-html {
-  min-height: 100%;
-}
+$color-bg-start: #1B2735;
+$color-bg-end: #090A0F;
+$color-text-base: rgb(235, 240, 255);
+$color-text-primary: rgba($color-text-base, 0.9);
+$color-text-hover: rgba($color-text-base, 0.95);
+$box-shadow-glass:
+  0 6px 18px rgba(3, 8, 20, 0.6),
+  0 0 18px rgba(120, 140, 255, 0.06),
+  inset 0 1px 0 rgba(255, 255, 255, 0.04);
+$box-shadow-glass-hover:
+  0 10px 30px rgba(3, 8, 20, 0.65),
+  0 0 28px rgba(120, 140, 255, 0.12),
+  inset 0 1px 0 rgba(255, 255, 255, 0.06);
+$box-shadow-glass-active:
+  0 4px 12px rgba(3, 8, 20, 0.55),
+      0 0 14px rgba(120, 140, 255, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.03);
 
 body {
   &:before {
@@ -22,7 +26,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    background: radial-gradient(ellipse at bottom, $color-bg-start 0%, $color-bg-end 100%);
     z-index: -1;
   }
 
@@ -30,130 +34,132 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  color: white;
+  color: $color-text-primary;
   background-color: transparent;
   position: relative;
-  min-height: 100vh;
   margin: 0;
   z-index: 1;
 }
 
-#stars,
-#stars2,
-#stars3 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-#stars {
-  width: 1px;
-  height: 1px;
-  background: transparent;
-  box-shadow: $shadows-small;
-  animation: animStar 50s linear infinite;
-    
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 2000px;
-    width: 1px;
-    height: 1px;
-    background: transparent;
-    box-shadow: $shadows-small;
-  }
-}
-    
-#stars2 {
-  width: 2px;
-  height: 2px;
-  background: transparent;
-  box-shadow: $shadows-medium;
-  animation: animStar 100s linear infinite;
-    
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 2000px;
-    width: 2px;
-    height: 2px;
-    background: transparent;
-    box-shadow: $shadows-medium;
-  }
-}
-    
-#stars3 {
-  width: 3px;
-  height: 3px;
-  background: transparent;
-  box-shadow: $shadows-big;
-  animation: animStar 150s linear infinite;
-    
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 2000px;
-    width: 3px;
-    height: 3px;
-    background: transparent;
-    box-shadow: $shadows-big;
-  }
-}
-    
-@keyframes animStar {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-2000px);
-  }
+:focus-visible {
+  outline: 2px solid $color-text-hover;
+  outline-offset: 2px;
+  border-radius: 10px;
 }
 
 a {
-  color: white;
+  color: $color-text-primary;
   
   &:hover {
-    color: white;
-    text-decoration: underline;
-    text-decoration-color: white;
+    color: $color-text-hover;
+    text-decoration: none;
   }
 }
 
-.btn {
-  font-weight: 600;
-  
-  &-outline-light {
-    &.focus,
-    &:focus,
-    &:not(:disabled):not(.disabled) {
-      &.active:focus,
-      &:active:focus {
-        box-shadow: none;
-      }
-    }
-    
-    .show > &.dropdown-toggle:focus {
-      box-shadow: none;
-    }
+img {
+  border-radius: 10px;
+}
+
+.up-on-hover {
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 160ms ease;
+
+  &:hover {
+    transform: translateY(-3px);
   }
+}
+
+.liquid-glass-button {
+  font-weight: 600;
+  width: 100%;
+  min-width: 100px;
+  padding: 7px 0px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  
+  /* 半透明液態玻璃底與星空風格的陰影 */
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: $box-shadow-glass;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: $color-text-base;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $box-shadow-glass-hover;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: $color-text-base;
+    text-decoration: none;
+  }
+
+  &.active {
+    transform: translateY(0);
+    box-shadow: $box-shadow-glass-active;
+    background: radial-gradient(ellipse at center, rgba($color-text-base, 0.1) 0%, rgba($color-text-base, 0.3) 100%) !important;
+    color: $color-text-base !important;
+  }
+  
 }
 
 .block {
-  border: 1px solid white;
-  padding: 0.5rem;
+  padding: 10px;
   margin-bottom: 1.5rem;
+
+  /* 半透明液態玻璃底與星空風格的陰影 */
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: $box-shadow-glass;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: $color-text-base;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: $box-shadow-glass-hover;
+    color: $color-text-base;
+  }
 }
 
 .badge {
   font-size: 0.875rem;
   font-weight: 600;
-  
-  &.clickable:hover {
-    background-color: #5dadf2;
-    cursor: pointer;
+}
+
+.badge-light {
+  background-color: $color-text-primary !important;
+}
+
+@media screen and (max-width: 768px) {
+  .liquid-glass-button:hover,
+  .block:hover,
+  .up-on-hover:hover {
+    transform: none !important;
+  }
+}
+
+/* Ripple element used by JS: creates a circle that scales and fades */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 500ms linear;
+  background-color: rgba($color-text-base, 0.18);
+  pointer-events: none;
+  will-change: transform, opacity;
+  opacity: 0.9;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(1);
+    opacity: 0;
   }
 }

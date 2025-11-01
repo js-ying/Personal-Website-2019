@@ -2,7 +2,9 @@
   <div class="container">
     <Navbar />
 
-    <router-view />
+    <keep-alive :include="['Portfolio']">
+      <router-view />
+    </keep-alive>
 
     <vue-easy-lightbox
       :visible="lightbox.visible"

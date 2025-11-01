@@ -2,7 +2,7 @@
   <div class="container">
     <Navbar />
 
-    <keep-alive :include="['Portfolio']">
+    <keep-alive :include="['Blog', 'Portfolio']">
       <router-view />
     </keep-alive>
 

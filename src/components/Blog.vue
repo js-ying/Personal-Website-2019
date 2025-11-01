@@ -41,24 +41,25 @@ export default {
           {
             tag: '2007',
             content:
-              '光 ~ の 設計角落 | 創始於 Yahoo! 奇摩部落格<br />以日記、楓之谷影片、ACG 心得為主。',
+              '<b>光 ~ の 設計角落 | 創始於 Yahoo! 奇摩部落格</b><br />以日記、楓之谷影片、ACG 心得為主。',
           },
           {
             tag: '2011',
-            content: '部落格搬家 | Pixnet 痞客邦<br />以圖畫日記、影劇心得為主。',
+            content: '<b>部落格搬家 | Pixnet 痞客邦</b><br />以圖畫日記、影劇心得為主。',
           },
           {
             tag: '2016',
-            content: '部落格搬家 | 自架 Wordpress<br />以生活經驗分享、影劇心得和 3C 開箱為主。',
+            content:
+              '<b>部落格搬家 | 自架 Wordpress</b><br />以生活經驗分享、影劇心得和 3C 開箱為主。',
           },
           {
             tag: '2019',
-            content: "站名變更 | JS Ying's Blog",
+            content: "<b>站名變更 | JS Ying's Blog</b>",
           },
           {
             tag: '2022',
             content:
-              '網域變更 | blog.jsy.tw<br />重新架了 server 順便將所有網址從子目錄變為子網域。',
+              '<b>網域變更 | blog.jsy.tw</b><br />重新架了 server 順便將所有網址從子目錄變為子網域。',
           },
         ].reverse(),
         link: 'https://blog.jsy.tw/',

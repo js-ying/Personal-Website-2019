@@ -45,4 +45,21 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+::v-deep .vel-modal {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+::v-deep .vel-img-wrapper {
+  transition: none !important;
+}
+
+::v-deep .vel-img-title {
+  color: rgba(235, 240, 255, 0.9) !important;
+  opacity: 1 !important;
+  font-size: 18px !important;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+</style>

@@ -1,4 +1,4 @@
-@import './star.scss';
+@use './star.scss' as *;
 
 $color-bg-start: #1B2735;
 $color-bg-end: #090A0F;

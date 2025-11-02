@@ -1,13 +1,16 @@
+@use "sass:math";
+@use "sass:string";
+
 $star-color-small: rgba(176, 201, 255, 0.3);
 $star-color-medium: rgba(196, 213, 255, 0.4);
 $star-color-big: rgba(216, 225, 255, 0.5);
 
 @function multiple-box-shadow($n, $color) {
-  $value: '#{random(2000)}px #{random(2000)}px #{$color}';
+  $value: '#{math.random(2000)}px #{math.random(2000)}px #{$color}';
   @for $i from 2 through $n {
-    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #{$color}';
+    $value: '#{$value} , #{math.random(2000)}px #{math.random(2000)}px #{$color}';
   }
-  @return unquote($value);
+  @return string.unquote($value);
 }
 
 $shadows-small:  multiple-box-shadow(700, $star-color-small);

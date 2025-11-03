@@ -11,7 +11,7 @@ const skillDataSet = [
   },
   {
     title: 'Backend',
-    desc: '主要以 Java Spring Boot 開發金融業內部系統核；Side project 以 Express.js 為主。',
+    desc: '主要以 Java Spring Boot 開發金融業內部系統；Side project 以 Express.js 為主。',
     contents: ['Java', 'Spring Boot', 'Node.js', 'Express.js', 'PHP', 'Laravel'],
   },
   {

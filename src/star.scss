@@ -36,7 +36,6 @@ $shadows-big:    multiple-box-shadow(100, $star-color-big);
   box-shadow: $shadows-small;
   animation: animStar 50s linear infinite;
   border-radius: 50%;
-  filter: blur(0.1px);
   
   &:after {
     content: " ";
@@ -47,7 +46,6 @@ $shadows-big:    multiple-box-shadow(100, $star-color-big);
     background: transparent;
     box-shadow: $shadows-small;
     border-radius: 50%;
-    filter: blur(0.1px);
   }
 }
 
@@ -58,7 +56,6 @@ $shadows-big:    multiple-box-shadow(100, $star-color-big);
   box-shadow: $shadows-medium;
   animation: animStar 100s linear infinite;
   border-radius: 50%;
-  filter: blur(0.2px);
   
   &:after {
     content: " ";
@@ -69,7 +66,6 @@ $shadows-big:    multiple-box-shadow(100, $star-color-big);
     background: transparent;
     box-shadow: $shadows-medium;
     border-radius: 50%;
-    filter: blur(0.2px);
   }
 }
 
@@ -80,7 +76,6 @@ $shadows-big:    multiple-box-shadow(100, $star-color-big);
   box-shadow: $shadows-big;
   animation: animStar 150s linear infinite;
   border-radius: 50%;
-  filter: blur(0.3px);
   
   &:after {
     content: " ";

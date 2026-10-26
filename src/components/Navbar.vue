@@ -58,7 +58,7 @@ export default {
           name: '技能',
         },
         {
-          link: '/blog-intro',
+          link: '/blog',
           name: '部落格',
         },
         {

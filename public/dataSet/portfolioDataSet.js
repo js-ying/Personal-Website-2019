@@ -635,7 +635,7 @@ const portfolioDataSet = {
       name: 'No.20 我就是我',
       date: '2011',
       description: '- 楓之谷僧侶三轉紀念影片 -',
-      link: 'https://jsy.tw/blog/483/',
+      link: 'https://blog.jsy.tw/483/',
     },
     {
       type: 'Video',
@@ -644,7 +644,7 @@ const portfolioDataSet = {
       name: 'No.21 下一頁的我',
       date: '2014',
       description: '- 楓之谷祭司四轉紀念影片 -',
-      link: 'https://jsy.tw/blog/571',
+      link: 'https://blog.jsy.tw/571/',
     },
     {
       type: 'Video',

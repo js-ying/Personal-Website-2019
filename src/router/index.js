@@ -23,7 +23,7 @@ export default new Router({
       component: Skill,
     },
     {
-      path: '/blog-intro',
+      path: '/blog',
       name: 'Blog',
       component: Blog,
     },

@@ -3,28 +3,48 @@ name: Deploy to Ubuntu Server
 on:
   push:
     branches:
-      - master # 或你希望觸發部署的分支
+      - master
+
+concurrency:
+  group: deploy-jsy-tw
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # - name: Checkout code
-      #   uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      # - name: Setup Node.js
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: '10.24.1' # 根據需要選擇 Node.js 版本
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
 
-      # - name: Install dependencies
-      #   run: npm install
+      - name: Install dependencies
+        run: npm ci
 
-      # - name: Build project
-      #   run: npm run build
+      - name: Build
+        run: npm run build
 
-      - name: Deploy to server
+      - name: Package artifact
+        run: |
+          [ -f dist/index.html ] || { echo "❌ dist 不完整"; exit 1; }
+          tar -czf artifact.tar.gz -C dist .
+
+      - name: Upload artifact to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
+          source: "artifact.tar.gz"
+          target: "/var/www/html/jsy.tw/public/guand2019/.deploy-staging"
+
+      - name: Release on server
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.SERVER_HOST }}
@@ -32,14 +52,19 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SERVER_PORT }}
           script: |
-            echo "Connected to server"
-            source ~/.zshrc
-            nvm use v12.22.12
-            node -v
-            vue --version
-            cd /var/www/html/jsy.tw/public/guand2019
-            git pull origin master
-            npm install
-            npm run build
-            cp temp/.htaccess dist/
-            cp temp/ads.txt dist/
+            APP=/var/www/html/jsy.tw/public/guand2019
+            STAGE="$APP/.deploy-staging"
+            cd "$APP" || exit 1
+
+            rm -rf "$APP/dist.new"; mkdir -p "$APP/dist.new"
+            tar -xzf "$STAGE/artifact.tar.gz" -C "$APP/dist.new" || { echo "❌ 解壓失敗"; exit 1; }
+            cp "$APP/temp/.htaccess" "$APP/temp/ads.txt" "$APP/dist.new/" || { echo "❌ temp/ 缺 .htaccess 或 ads.txt"; rm -rf "$APP/dist.new"; exit 1; }
+            [ -f "$APP/dist.new/index.html" ] || { echo "❌ artifact 不完整"; rm -rf "$APP/dist.new"; exit 1; }
+
+            # 原子換版，舊版留作 rollback
+            rm -rf "$APP/dist.old"
+            [ -d "$APP/dist" ] && mv "$APP/dist" "$APP/dist.old"
+            mv "$APP/dist.new" "$APP/dist"
+
+            rm -rf "$STAGE"
+            echo "✅ deploy 完成"

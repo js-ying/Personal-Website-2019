@@ -124,12 +124,12 @@ const portfolioDataSet = {
     {
       type: 'Web',
       ifcase: '自行練習',
-      img: 'new-train-time.png',
+      img: 'new-train-time-2026.png',
       name: '新-台鐵時刻查詢',
-      date: '2024',
-      description: '專為通勤族設計的時刻表。',
+      date: '2024 - Present',
+      description: '台鐵、高鐵、桃捷與全台公車一站查詢。',
       link: 'https://traintime.jsy.tw/',
-      keywords: ['React 18', 'Next.js', 'TailwindCSS', 'RWD'],
+      keywords: ['Next.js 14', 'TypeScript', 'Express.js', 'MySQL', 'PWA', 'i18n', 'TailwindCSS'],
     },
   ],
   chatbots: [

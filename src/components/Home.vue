@@ -44,7 +44,7 @@ export default {
       contacts: [
         {
           name: 'E-mail',
-          link: 'mailto:jsying1994@gmail.com',
+          link: 'mailto:hi@jsy.tw',
           svg: 'bi bi-envelope-fill',
         },
         {

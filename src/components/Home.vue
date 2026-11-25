@@ -25,7 +25,7 @@
         <a
           :href="contact.copy ? '#' : contact.link"
           :target="contact.copy ? null : '_blank'"
-          :title="contact.copy ? '複製 e-mail 地址' : contact.name"
+          :title="contact.copy ? '複製電子郵件地址' : contact.name"
           @click="contact.copy && copyEmail($event, contact.copy)"
           :class="{ 'mr-3': index != contacts.length - 1 }"
           v-for="(contact, index) in contacts"
@@ -88,7 +88,7 @@ export default {
       } catch (e) {
         copied = false;
       }
-      this.toast = copied ? `已複製 e-mail 地址：${email}` : `請手動複製 e-mail 地址：${email}`;
+      this.toast = copied ? `已複製電子郵件地址：${email}` : `請手動複製電子郵件地址：${email}`;
       clearTimeout(this.toastTimer);
       this.toastTimer = setTimeout(() => {
         this.toast = '';

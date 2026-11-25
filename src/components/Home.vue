@@ -23,8 +23,10 @@
     <section id="contact-section">
       <p>
         <a
-          :href="contact.link"
-          target="_blank"
+          :href="contact.copy ? '#' : contact.link"
+          :target="contact.copy ? null : '_blank'"
+          :title="contact.copy ? '複製 e-mail 地址' : contact.name"
+          @click="contact.copy && copyEmail($event, contact.copy)"
           :class="{ 'mr-3': index != contacts.length - 1 }"
           v-for="(contact, index) in contacts"
           :key="index"
@@ -33,6 +35,9 @@
         </a>
       </p>
     </section>
+    <transition name="toast-fade">
+      <div v-if="toast" class="copy-toast" role="status">{{ toast }}</div>
+    </transition>
   </div>
 </template>
 
@@ -44,7 +49,7 @@ export default {
       contacts: [
         {
           name: 'E-mail',
-          link: 'mailto:hi@jsy.tw',
+          copy: 'hi@jsy.tw',
           svg: 'bi bi-envelope-fill',
         },
         {
@@ -53,6 +58,8 @@ export default {
           svg: 'bi bi-github',
         },
       ],
+      toast: '',
+      toastTimer: null,
     };
   },
   computed: {
@@ -70,6 +77,24 @@ export default {
       return { years, months };
     },
   },
+  methods: {
+    // 複製信箱到剪貼簿並顯示提示；複製失敗時仍顯示地址供手動複製
+    async copyEmail(event, email) {
+      event.preventDefault();
+      let copied = false;
+      try {
+        await navigator.clipboard.writeText(email);
+        copied = true;
+      } catch (e) {
+        copied = false;
+      }
+      this.toast = copied ? `已複製 e-mail 地址：${email}` : `請手動複製 e-mail 地址：${email}`;
+      clearTimeout(this.toastTimer);
+      this.toastTimer = setTimeout(() => {
+        this.toast = '';
+      }, 2500);
+    },
+  },
 };
 </script>
 
@@ -78,5 +103,28 @@ export default {
 section {
   font-size: 1rem;
   margin-bottom: 1.4rem;
+}
+.copy-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  z-index: 1080;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: rgba(33, 37, 41, 0.92);
+  color: #fff;
+  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.toast-fade-enter-active,
+.toast-fade-leave-active {
+  transition: opacity 0.2s;
+}
+.toast-fade-enter,
+.toast-fade-leave-to {
+  opacity: 0;
 }
 </style>

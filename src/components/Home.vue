@@ -36,7 +36,14 @@
         </a>
       </p>
     </section>
-    <dialog ref="mailDialog" class="mail-dialog" aria-labelledby="mail-dialog-title" @click="closeOnBackdrop">
+    <dialog
+      ref="mailDialog"
+      class="mail-dialog"
+      aria-labelledby="mail-dialog-title"
+      tabindex="-1"
+      @click="closeOnBackdrop"
+    >
+      <div class="mail-card">
       <form method="dialog" class="mail-close"><button aria-label="關閉">✕</button></form>
       <h3 id="mail-dialog-title">來信聯絡</h3>
       <p class="mail-address">
@@ -52,6 +59,7 @@
         ></span>
       </p>
       <a class="mail-to" :href="`mailto:${mail}`">開啟郵件程式</a>
+      </div>
       <!-- 提示放在 dialog 內才會顯示在 modal 上層 -->
       <transition name="toast-fade">
         <div v-if="toast" class="copy-toast" role="status">{{ toast }}</div>
@@ -98,11 +106,13 @@ export default {
     },
   },
   methods: {
-    // 開啟寄信視窗，由使用者選擇開郵件程式或複製地址
+    // 開啟寄信視窗；滑鼠或觸控開啟時 focus 放在視窗本身，避免 Safari 在關閉鈕顯示外框
     openMail(event) {
       event.preventDefault();
-      if (event.detail > 0) event.currentTarget.blur();
+      const byPointer = event.detail > 0;
+      if (byPointer) event.currentTarget.blur();
       this.$refs.mailDialog.showModal();
+      if (byPointer) this.$refs.mailDialog.focus();
     },
     // 只在點到視窗外的背景時關閉（點視窗留白處 target 也是 dialog，需比對座標）
     closeOnBackdrop(event) {
@@ -138,30 +148,30 @@ section {
   font-size: 1rem;
   margin-bottom: 1.4rem;
 }
-/* 寄信視窗：半透明模糊的星空玻璃，與首頁卡片一致 */
+/* 寄信視窗：dialog 只當透明外框，玻璃效果放在內層卡片（避免 Safari 偽元素模糊殘影） */
 .mail-dialog {
   width: min(320px, calc(100% - 32px));
-  padding: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.04);
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  overflow: visible;
   color: #ebf0ff;
-  box-shadow: 0 16px 40px rgba(3, 8, 20, 0.55), 0 0 28px rgba(120, 140, 255, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
   text-align: center;
   font-size: 16px;
   line-height: 1.5;
 }
-/* 模糊放在 ::before；加在 dialog 本身會讓內部 fixed 的提示改以視窗定位 */
-.mail-dialog::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  border-radius: inherit;
+.mail-dialog:focus {
+  outline: none;
+}
+.mail-card {
+  position: relative;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 16px 40px rgba(3, 8, 20, 0.55), 0 0 28px rgba(120, 140, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   backdrop-filter: blur(18px) saturate(140%);
 }

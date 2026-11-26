@@ -104,9 +104,14 @@ export default {
       if (event.detail > 0) event.currentTarget.blur();
       this.$refs.mailDialog.showModal();
     },
-    // 點背景關閉視窗
+    // 只在點到視窗外的背景時關閉（點視窗留白處 target 也是 dialog，需比對座標）
     closeOnBackdrop(event) {
-      if (event.target === this.$refs.mailDialog) this.$refs.mailDialog.close();
+      const dialog = this.$refs.mailDialog;
+      if (event.target !== dialog) return;
+      const r = dialog.getBoundingClientRect();
+      const inX = event.clientX >= r.left && event.clientX <= r.right;
+      const inY = event.clientY >= r.top && event.clientY <= r.bottom;
+      if (!inX || !inY) dialog.close();
     },
     // 複製地址並跳出提示
     async copyMail() {

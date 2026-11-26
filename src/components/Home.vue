@@ -133,28 +133,48 @@ section {
   font-size: 1rem;
   margin-bottom: 1.4rem;
 }
-/* 寄信視窗（深色） */
+/* 寄信視窗：半透明模糊的星空玻璃，與首頁卡片一致 */
 .mail-dialog {
   width: min(320px, calc(100% - 32px));
   padding: 24px;
-  border: 1px solid rgba(235, 240, 255, 0.12);
-  border-radius: 12px;
-  background: #141a26;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
   color: #ebf0ff;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 40px rgba(3, 8, 20, 0.55), 0 0 28px rgba(120, 140, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
   text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+}
+/* 模糊放在 ::before；加在 dialog 本身會讓內部 fixed 的提示改以視窗定位 */
+.mail-dialog::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: inherit;
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
 }
 .mail-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(3, 8, 20, 0.55);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
 }
 .mail-dialog h3 {
-  margin: 0 0 8px;
-  font-size: 1.1rem;
+  margin: 0 0 6px;
+  font-size: 18px;
   font-weight: 700;
+  line-height: 28px;
 }
 .mail-address {
   margin: 0 0 20px;
-  font-size: 1.05rem;
+  font-size: 16px;
+  line-height: 24px;
 }
 /* 地址單獨置中，複製圖示掛在右側不佔置中寬度 */
 .mail-value {
@@ -169,45 +189,62 @@ section {
   display: inline-flex;
   padding: 6px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 8px;
   background: none;
-  color: rgba(235, 240, 255, 0.62);
+  color: rgba(235, 240, 255, 0.6);
   font-size: 16px;
   line-height: 1;
   cursor: pointer;
+  transition: background-color 0.16s, color 0.16s;
 }
 .mail-copy:hover {
-  background: rgba(94, 173, 240, 0.12);
-  color: #5eadf0;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ebf0ff;
 }
 .mail-to {
   display: block;
   padding: 9px 12px;
-  border-radius: 8px;
-  background: #5eadf0;
-  color: #141a26;
-  font-size: 0.92rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #ebf0ff;
+  box-shadow: 0 6px 18px rgba(3, 8, 20, 0.6), 0 0 18px rgba(120, 140, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  font-size: 15px;
+  line-height: 22px;
   text-decoration: none;
+  transition: background-color 0.16s, transform 0.16s;
 }
 .mail-to:hover {
-  color: #141a26;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ebf0ff;
   text-decoration: none;
-  opacity: 0.9;
+  transform: translateY(-1px);
 }
 .mail-close {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 12px;
+  right: 12px;
   margin: 0;
 }
 .mail-close button {
-  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
   border: 0;
+  border-radius: 8px;
   background: none;
-  color: rgba(235, 240, 255, 0.62);
-  font-size: 1rem;
+  color: rgba(235, 240, 255, 0.6);
+  font-size: 16px;
   line-height: 1;
   cursor: pointer;
+}
+.mail-close button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ebf0ff;
 }
 /* 複製成功的底部提示，配色與視窗反轉 */
 .copy-toast {
